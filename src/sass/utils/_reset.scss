@@ -16,7 +16,10 @@ p {
 
 body {
   margin: 0;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 }
 
 img {
@@ -24,10 +27,16 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 button {
   margin: 0;
   padding: 0;
   border: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .link {
