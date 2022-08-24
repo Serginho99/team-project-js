@@ -1,0 +1,17 @@
+.pagination {
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    & .page {
+        padding: 20px;
+        cursor: pointer;
+    }
+    & .current {
+        padding: 10px 15px;
+        background: #FF6B08;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
