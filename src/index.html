@@ -14,6 +14,36 @@
     />
   </head>
   <body>
+    <header>
+      <div class="container header-container">
+        <nav class="navigation">
+          <a class="logo link" href="./index.html">
+            <img
+              src="./images/logo.svg"
+              alt="logo"
+              width="24"
+              height="24"
+            /><span class="logo-text">Filmoteka</span></a
+          >
+          <ul class="nav-list list">
+            <li class="nav-list-item current">Home</li>
+            <li class="nav-list-item">My library</li>
+          </ul>
+        </nav>
+        <form class="form">
+          <input class="form-input" type="text" placeholder="Movie search" />
+          <button class="form-button" type="submit">
+            <img
+              src="./images/search-icon.svg"
+              alt="search icon"
+              width="12"
+              height="12"
+            />
+          </button>
+        </form>
+      </div>
+    </header>
+
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/example.html"></include> -->
     <include src="./partials/cards.html"></include>
