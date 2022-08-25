@@ -15,6 +15,55 @@
     />
   </head>
   <body>
+    <header>
+      <div class="container header-library">
+        <nav class="navigation navigation__library">
+          <a class="logo link" href="./index.html">
+            <img
+              src="./images/logo.svg"
+              alt="logo"
+              width="24"
+              height="24"
+            /><span class="logo-text">Filmoteka</span></a
+          >
+          <ul class="nav-list list">
+            <li class="nav-list-item ">
+              <a href="./index.html" class="nav-list-link link">Home</a>
+            </li>
+            <li class="nav-list-item current">
+              <a href="./library.html" class="nav-list-link link">My library</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="btn-list list">
+          <li class="btn-list__item">
+            <button type="button" class="button watched-btn button-active">
+              WATCHED
+            </button>
+          </li class="btn-list__item">
+          <li><button type="button" class="button queue-btn">QUEUE</button></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        Рендер из локал сторедж сюда(наверно:D)
+      </div>
+    </main>
+    <footer>
+      <div class="footer__container container">
+        <div class="footer__link">
+          <p class="footer__text">© 2021 | All Rights Reserved |</p>
+          Developed with
+          <button data-modal-open type="button" class="team-btn">
+            <svg width="14" height="13" class="heart__svg">
+              <use href="./images/svg/heart.svg"></use>
+            </svg>
+          </button>
+          by GoIT Students
+        </div>
+      </div>
+    </footer>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
