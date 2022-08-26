@@ -99,7 +99,7 @@ function showMovies(data) {
     });
 
     const genreNames = genreArrayOfObj.map((a) => a.name);
-
+     
     movieEl.innerHTML = `
     <img src='${IMG_URL + poster_path}' alt='${title}'>
         <div class="movie-info">
@@ -107,7 +107,7 @@ function showMovies(data) {
             <div class="overview">
             <p class="info__genres-and-year">${genreNames.join(
               ", "
-            )} | ${release_date} </p>          
+            )} | ${release_date.slice(0, 4)} </p>          
             </div>
         </div>
     `;
