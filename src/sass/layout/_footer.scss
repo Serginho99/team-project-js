@@ -20,8 +20,15 @@ footer {
 }
 .footer__text {
   display: block;
-
   padding-bottom: 10px;
+  margin-right: 10px;
+}
+.footer__second_text {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+.footer__sp {
+  text-decoration: none;
 }
 
 // media screen 768
