@@ -14,7 +14,7 @@
     />
   </head>
   <body>
-    <header>
+    <header class="overlay">
       <div class="container header-container">
         <nav class="navigation">
           <a class="logo link" href="./index.html">
@@ -26,12 +26,21 @@
             /><span class="logo-text">Filmoteka</span></a
           >
           <ul class="nav-list list">
-            <li class="nav-list-item current">Home</li>
-            <li class="nav-list-item">My library</li>
+            <li class="nav-list-item current">
+              <a class="link nav-list-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-list-item">
+              <a class="link nav-list-link" href="./library.html">My library</a>
+            </li>
           </ul>
         </nav>
         <form class="form">
-          <input class="form-input" type="text" placeholder="Movie search" />
+          <input
+            class="form-input"
+            name="“searchQuery”"
+            type="text"
+            placeholder="Movie search"
+          />
           <button class="form-button" type="submit">
             <img
               src="./images/search-icon.svg"
@@ -50,7 +59,23 @@
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/example.html"></include> -->
     <include src="./partials/pagination.html"></include>
-    <include src="./partials/footer.html"></include>
+    <!-- <include src="./partials/footer.html"></include> -->
+    <footer>
+      <div class="footer__container container">
+        <div class="footer__link">
+          <p class="footer__text">
+            © 2021 | All Rights Reserved | Developed with
+          </p>
+          <svg class="heart__svg">
+            <use href="./images/svg/heart.svg#icon-heart"></use>
+          </svg>
+          <p class="footer__second_text">by</p>
+          <button data-modal-open type="button" class="team-btn">
+            <a href="">GoIT Students</a>
+          </button>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

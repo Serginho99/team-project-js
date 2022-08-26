@@ -5,6 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="container header-library">
+        <nav class="navigation navigation__library">
+          <a class="logo link" href="./index.html">
+            <img
+              src="./images/logo.svg"
+              alt="logo"
+              width="24"
+              height="24"
+            /><span class="logo-text">Filmoteka</span></a
+          >
+          <ul class="nav-list list">
+            <li class="nav-list-item ">
+              <a href="./index.html" class="nav-list-link link">Home</a>
+            </li>
+            <li class="nav-list-item current">
+              <a href="./library.html" class="nav-list-link link">My library</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="btn-list list">
+          <li class="btn-list__item">
+            <button type="button" class="button watched-btn button-active">
+              WATCHED
+            </button>
+          </li class="btn-list__item">
+          <li><button type="button" class="button queue-btn">QUEUE</button></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        Рендер из локал сторедж сюда(наверно:D)
+      </div>
+    </main>
+    <footer>
+      <div class="footer__container container">
+        <div class="footer__link">
+          <p class="footer__text">
+            © 2021 | All Rights Reserved | Developed with
+          </p>
+          <svg class="heart__svg">
+            <use href="./images/svg/heart.svg#icon-heart"></use>
+          </svg>
+          <p class="footer__second_text">by</p>
+          <button data-modal-open type="button" class="team-btn">
+            <a href="">GoIT Students</a>
+          </button>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>
