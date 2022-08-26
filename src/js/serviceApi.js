@@ -29,9 +29,21 @@ const main = document.getElementById('main');
 const form = document.getElementById('.form');
 const search = document.getElementById('.search');
 
+// El pagination
+const prev = document.querySelector("#prev");
+const current = document.querySelector("#current");
+const next = document.querySelector("#next");
+
+let currentPage = 1;
+let nextPage = 2;
+let prevPage = 3;
+let lastUrl = "";
+let totalPages = 100;
+
 getMovies(API_URL);
 
-function getMovies(url) {
+export function getMovies(url) {
+  lastUrl = url;
   fetch(url)
     .then(res => res.json())
     .then(data => {
@@ -87,7 +99,7 @@ function showMovies(data) {
     });
 
     const genreNames = genreArrayOfObj.map((a) => a.name);
-
+     
     movieEl.innerHTML = `
     <img src='${IMG_URL + poster_path}' alt='${title}'>
         <div class="movie-info">
@@ -95,10 +107,40 @@ function showMovies(data) {
             <div class="overview">
             <p class="info__genres-and-year">${genreNames.join(
               ", "
-            )} | ${release_date} </p>          
+            )} | ${release_date.slice(0, 4)} </p>          
             </div>
         </div>
     `;
     main.appendChild(movieEl);
   });
+}
+// Pagination
+next.addEventListener("click", () => {
+  if (nextPage > 0) {
+    pageCall(nextPage);
+  }
+});
+
+prev.addEventListener("click", () => {
+  console.log(currentPage);
+  if (prevPage <= totalPages && currentPage-1 > 0) {
+    pageCall(prevPage);
+  }
+});
+
+function pageCall(page) {
+  let urlSplit = lastUrl.split("?");
+  let queryParams = urlSplit[1].split("?");
+  let key = queryParams[queryParams.length - 1].split("=");
+  if (key[0] !== "page") {
+    let url = lastUrl + "&page=" + page;
+    getMovies(url);
+  } else {
+    key[1] = page.toString();
+    let a = key.join("=");
+    queryParams[queryParams.length - 1] = a;
+    let b = queryParams.join("&");
+    let url = urlSplit[0] + "?" + b;
+    getMovies(url);
+  }
 }
