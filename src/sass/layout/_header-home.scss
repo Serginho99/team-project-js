@@ -1,7 +1,10 @@
 //COMMON
+.overlay {
+  background-size: cover;
+}
+
 .header-container {
   padding-top: 40px;
-  background-size: cover;
 }
 
 .header-library {
@@ -53,6 +56,7 @@
   width: 100%;
   background-color: transparent;
   border: none;
+  border-radius: 0px;
   border-bottom: 1px solid var(--primary-bg-color);
   padding: 0 0 4px 0;
   font-weight: 400;
@@ -79,25 +83,24 @@
 
 //PHONES
 @media screen and (max-width: 767.99px) {
-  .header-container {
-    padding-bottom: 91px;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.25)
-      ),
-      url(../images/320px/header-bg-img-home.jpg);
-
-    @media (min-device-pixel-ratio: 2),
+  .overlay {
+    background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.25)),
+        url(../images/320px/header-bg-img-home.jpg);
+    
+      @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.25),
-          rgba(0, 0, 0, 0.25)
-        ),
-        url(../images/320px/header-bg-img-home@2x.jpg);
-    }
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)),
+          url(../images/320px/header-bg-img-home@2x.jpg);
+      }
+  }
+
+  .header-container {
+    padding-bottom: 91px;
   }
 
   .header-library {
@@ -136,25 +139,24 @@
 
 //TABLETS
 @media screen and (min-width: 768px) {
-  .header-container {
-    padding-bottom: 80px;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.25)
-      ),
-      url(../images/768px/header-bg-img-home.jpg);
-
-    @media (min-device-pixel-ratio: 2),
+  .overlay {
+    background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.25)),
+        url(../images/768px/header-bg-img-home.jpg);
+    
+      @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.25),
-          rgba(0, 0, 0, 0.25)
-        ),
-        url(../images/768px/header-bg-img-home@2x.jpg);
-    }
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)),
+          url(../images/768px/header-bg-img-home@2x.jpg);
+      }
+  }
+
+  .header-container {
+    padding-bottom: 80px;
   }
 
   .header-library {
@@ -207,7 +209,7 @@
 
 //DESKTOPS
 @media screen and (min-width: 1280px) {
-  .header-container {
+  .overlay {
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.25),
