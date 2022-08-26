@@ -30,6 +30,16 @@
   background-repeat: no-repeat;
 }
 
+.arrow-left:hover,
+.arrow-left:focus {
+  background-color: rgb(0, 0, 0, 0.05);
+}
+
+.arrow-right:hover,
+.arrow-right:focus {
+  background-color: rgb(0, 0, 0, 0.05);
+}
+
 .arrow-left {
   background-image: url(/src/images/svg/arrow-left.svg);
 }
