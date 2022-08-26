@@ -1,136 +1,113 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filmoteka</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
 
-  <body>
-    <header class="overlay">
-      <div class="container header-container">
-        <nav class="navigation">
-          <a class="logo link" href="./index.html">
-            <img
-              src="./images/logo.svg"
-              alt="logo"
-              width="24"
-              height="24"
-            /><span class="logo-text">Filmoteka</span></a
-          >
-          <ul class="nav-list list">
-            <li class="nav-list-item current">
-              <a class="link nav-list-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-list-item">
-              <a class="link nav-list-link" href="./library.html">My library</a>
-            </li>
-          </ul>
-        </nav>
-        <form class="form">
-          <input
-            class="form-input"
-            name="“searchQuery”"
-            type="text"
-            placeholder="Movie search"
-          />
-          <button class="form-button" type="submit">
-            <img
-              src="./images/search-icon.svg"
-              alt="search icon"
-              width="12"
-              height="12"
-            />
-          </button>
-        </form>
-      </div>
-    </header>
-    <main id="main">
-      <div class="movie"></div>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filmoteka</title>
+  <link rel="stylesheet" href="./sass/index.scss" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <!-- <include src="./partials/example.html"></include> -->
-    <div class="pagination">
-      <div class="page arrow-left" id="prev"></div>
-      <div class="current" id="current">1</div>
-      <div class="page arrow-right" id="next"></div>
-    </div>
-    <!-- <include src="./partials/footer.html"></include> -->
-    <footer>
-      <div class="footer__container container">
-        <div class="footer__link">
-          <p class="footer__text">
-            © 2021 | All Rights Reserved | Developed with
-          </p>
-          <svg class="heart__svg">
-            <use href="./images/svg/heart.svg#icon-heart"></use>
-          </svg>
-          <p class="footer__second_text">by</p>
-          <button data-modal-open type="button" class="team-btn">
-            <a href="">GoIT Students</a>
-          </button>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Modal window - film card------- -->
-    <div class="modal__backdrop">
-      <!-- <template id="modalFilmTemplate"> -->
-      <div class="modal__container">
-        <button class="modal__close-btn">
-          <svg class="modal__close-icon" width="30" height="30">
-            <use href="./images/svg/close.svg"></use>
-          </svg>
+<body>
+  <header class="overlay">
+    <div class="container header-container">
+      <nav class="navigation">
+        <a class="logo link" href="./index.html">
+          <img src="./images/logo.svg" alt="logo" width="24" height="24" /><span class="logo-text">Filmoteka</span></a>
+        <ul class="nav-list list">
+          <li class="nav-list-item current">
+            <a class="link nav-list-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="link nav-list-link" href="./library.html">My library</a>
+          </li>
+        </ul>
+      </nav>
+      <form class="form">
+        <input class="form-input" name="“searchQuery”" type="text" placeholder="Movie search" />
+        <button class="form-button" type="submit">
+          <img src="./images/search-icon.svg" alt="search icon" width="12" height="12" />
         </button>
+      </form>
+    </div>
+  </header>
+  <main id="main">
+    <div class="movie"></div>
+  </main>
 
-        <div class="modal__wrapper">
-          <div class="modal__image">
-            <img
-              src="./images/default-poster.jpg"
-              alt=""
-              width="240"
-              height="357"
-            />
-          </div>
-          <div class="modal__content">
-            <h3 class="movie__title"></h3>
-            <dl class="modal__meta">
-              <dt>Vote / Votes</dt>
-              <dd>
-                <span data-attr="avg-rating">0</span> <i>/</i>
-                <span data-attr="vote-count">0</span>
-              </dd>
+  <!-- ❗️❗️❗️ Add partials like so for every page -->
+  <!-- <include src="./partials/example.html"></include> -->
+  <div class="pagination">
+    <div class="page arrow-left" id="prev"></div>
+    <div class="current" id="current">1</div>
+    <div class="page arrow-right" id="next"></div>
+  </div>
+  <!-- <include src="./partials/footer.html"></include> -->
+  <footer>
+    <div class="footer__container container">
+      <div class="footer__link">
+        <p class="footer__text">
+          © 2021 | All Rights Reserved | Developed with
+        </p>
+        <svg class="heart__svg">
+          <use href="./images/svg/heart.svg#icon-heart"></use>
+        </svg>
+        <p class="footer__second_text">by</p>
+        <button data-modal-open type="button" class="team-btn">
+          <a href="">GoIT Students</a>
+        </button>
+      </div>
+    </div>
+  </footer>
 
-              <dt>Popularity</dt>
-              <dd data-attr="popularity">0</dd>
+  <!-- Modal window - film card------- -->
+  <div class="modal__backdrop">
+    <!-- <template id="modalFilmTemplate"> -->
+    <div class="modal__container">
+      <button class="modal__close-btn">
+        <svg class="modal__close-icon" width="30" height="30">
+          <use href="./images/svg/close.svg"></use>
+        </svg>
+      </button>
 
-              <dt>Original Title</dt>
-              <dd data-attr="orig-title"></dd>
+      <div class="modal__wrapper">
+        <div class="modal__image">
+          <img src="./images/default-poster.jpg" alt="" width="240" height="357" class="img" />
+        </div>
+        <div class="modal__content">
+          <h3 class="movie__title"></h3>
+          <dl class="modal__meta">
+            <dt>Vote / Votes</dt>
+            <dd>
+              <span data-attr="avg-rating">0</span> <i>/</i>
+              <span data-attr="vote-count">0</span>
+            </dd>
 
-              <dt>Genre</dt>
-              <dd data-attr="genre"></dd>
-            </dl>
+            <dt>Popularity</dt>
+            <dd data-attr="popularity">0</dd>
 
-            <h4 class="movie__descr-title">About</h4>
-            <p class="modal__overview" data-attr="overview"></p>
-            <div class="button__row">
-              <button type="button" class="button modal__btn-watched"></button>
-              <button type="button" class="button modal__btn-queue"></button>
-            </div>
+            <dt>Original Title</dt>
+            <dd data-attr="orig-title"></dd>
+
+            <dt>Genre</dt>
+            <dd data-attr="genre"></dd>
+          </dl>
+
+          <h4 class="movie__descr-title">About</h4>
+          <p class="modal__overview" data-attr="overview"></p>
+          <div class="button__row">
+            <button type="button" class="modal__btn modal__btn-watched">add to watched</button>
+            <button type="button" class="modal__btn modal__btn-queue">add to queue</button>
           </div>
         </div>
       </div>
-      <!-- </template> -->
     </div>
-    <script type="module" src="./index.js"></script>
-  </body>
+    <!-- </template> -->
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+
 </html>
