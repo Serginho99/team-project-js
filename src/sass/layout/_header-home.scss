@@ -39,7 +39,8 @@
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.current-page:hover::after {
+.current-page:hover::after, 
+.current-page:focus::after {
   transform: scaleX(0.8);
 }
 
@@ -185,6 +186,7 @@
 
   .logo {
     display: flex;
+    align-items: center;
   }
 
   .logo-text {
@@ -251,5 +253,38 @@
 
   .form {
     width: 394px;
+  }
+}
+
+.logo:hover .animation-wrapper,
+.logo:focus .animation-wrapper {
+  border-radius: 0px;
+  animation: running-tape 2s linear infinite
+}
+
+.animation-running-tape {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.animation-running-tape:hover,
+.animation-running-tape:focus {
+  border-radius: 0px;
+}
+
+.animation-running-tape img {
+  display: block;
+  width: 22px;
+}
+
+@keyframes running-tape {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-65%);
   }
 }
