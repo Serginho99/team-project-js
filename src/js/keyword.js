@@ -57,7 +57,14 @@ function createList(acc, cardFilm) {
     acc +
     `
     <div class="movie">
-    <img src='${imgUrl + cardFilm.poster_path}' alt='${cardFilm.title}'>
+    ${
+      cardFilm.poster_path
+        ? `<img src='${imgUrl + cardFilm.poster_path}' alt='${cardFilm.title}'>`
+        : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${
+            cardFilm.title
+          }">`
+    }
+    
         <div class="movie-info">
           <h3 class="title__info">${cardFilm.title}</h3>
             <div class="overview">
