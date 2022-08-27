@@ -30,14 +30,14 @@ const form = document.getElementById('.form');
 const search = document.getElementById('.search');
 
 // El pagination
-const prev = document.querySelector("#prev");
-const current = document.querySelector("#current");
-const next = document.querySelector("#next");
+const prev = document.querySelector('#prev');
+const current = document.querySelector('#current');
+const next = document.querySelector('#next');
 
 let currentPage = 1;
 let nextPage = 2;
 let prevPage = 3;
-let lastUrl = "";
+let lastUrl = '';
 let totalPages = 100;
 
 getMovies(API_URL);
@@ -48,7 +48,7 @@ export function getMovies(url) {
     .then(res => res.json())
     .then(data => {
       showMovies(data.results);
-    
+
       currentPage = data.page;
       console.log(currentPage);
       nextPage = data.page + 1;
@@ -58,19 +58,19 @@ export function getMovies(url) {
       current.innerText = currentPage;
 
       if (currentPage <= 1) {
-        prev.classList.add("disabled");
-        next.classList.remove("disabled");
+        prev.classList.add('disabled');
+        next.classList.remove('disabled');
       } else if (currentPage >= totalPages) {
-        prev.classList.remove("disabled");
-        next.classList.add("disabled");
+        prev.classList.remove('disabled');
+        next.classList.add('disabled');
       } else {
-        prev.classList.remove("disabled");
-        next.classList.remove("disabled");
+        prev.classList.remove('disabled');
+        next.classList.remove('disabled');
       }
-      main.scrollIntoView({ behavior: "smooth" });
+      main.scrollIntoView({ behavior: 'smooth' });
 
       if (data.results.length === 0) {
-        console.log("ERROR IN SEARCH");
+        console.log('ERROR IN SEARCH');
         getMovies(API_URL);
       }
     });
@@ -98,15 +98,15 @@ function showMovies(data) {
       return genre_ids.indexOf(g.id) !== -1;
     });
 
-    const genreNames = genreArrayOfObj.map((a) => a.name);
-     
+    const genreNames = genreArrayOfObj.map(a => a.name);
+
     movieEl.innerHTML = `
     <img src='${IMG_URL + poster_path}' alt='${title}'>
         <div class="movie-info">
           <h3 class="title__info">${title}</h3>
             <div class="overview">
             <p class="info__genres-and-year">${genreNames.join(
-              ", "
+              ', '
             )} | ${release_date.slice(0, 4)} </p>          
             </div>
         </div>
@@ -115,32 +115,32 @@ function showMovies(data) {
   });
 }
 // Pagination
-next.addEventListener("click", () => {
+next.addEventListener('click', () => {
   if (nextPage > 0) {
     pageCall(nextPage);
   }
 });
 
-prev.addEventListener("click", () => {
+prev.addEventListener('click', () => {
   console.log(currentPage);
-  if (prevPage <= totalPages && currentPage-1 > 0) {
+  if (prevPage <= totalPages && currentPage - 1 > 0) {
     pageCall(prevPage);
   }
 });
 
 function pageCall(page) {
-  let urlSplit = lastUrl.split("?");
-  let queryParams = urlSplit[1].split("?");
-  let key = queryParams[queryParams.length - 1].split("=");
-  if (key[0] !== "page") {
-    let url = lastUrl + "&page=" + page;
+  let urlSplit = lastUrl.split('?');
+  let queryParams = urlSplit[1].split('?');
+  let key = queryParams[queryParams.length - 1].split('=');
+  if (key[0] !== 'page') {
+    let url = lastUrl + '&page=' + page;
     getMovies(url);
   } else {
     key[1] = page.toString();
-    let a = key.join("=");
+    let a = key.join('=');
     queryParams[queryParams.length - 1] = a;
-    let b = queryParams.join("&");
-    let url = urlSplit[0] + "?" + b;
+    let b = queryParams.join('&');
+    let url = urlSplit[0] + '?' + b;
     getMovies(url);
   }
 }
