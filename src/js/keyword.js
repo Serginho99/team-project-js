@@ -68,10 +68,16 @@ function createList(acc, cardFilm) {
         <div class="movie-info">
           <h3 class="title__info">${cardFilm.title}</h3>
             <div class="overview">
-            <p class="info__genres-and-year">${genreNames
-              .slice(0, 3)
-              .join(', ')}
-             | ${cardFilm.release_date.slice(0, 4)} </p>          
+            ${
+              genreNames.slice(0, 3).join(', ')
+                ? `<p class="info__genres-and-year">${genreNames
+                    .slice(0, 3)
+                    .join(', ')}
+             | ${cardFilm.release_date.slice(0, 4)} </p>`
+                : `<p class="info__genres-and-year"> N/A
+             | ${cardFilm.release_date.slice(0, 4)} </p>`
+            }
+                      
             </div>
         </div>
         </div>

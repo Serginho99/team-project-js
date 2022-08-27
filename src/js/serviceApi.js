@@ -101,13 +101,23 @@ function showMovies(data) {
     const genreNames = genreArrayOfObj.map(a => a.name);
 
     movieEl.innerHTML = `
-    <img src='${IMG_URL + poster_path}' alt='${title}'>
+    ${
+      poster_path
+        ? `<img src='${IMG_URL + poster_path}' alt='${title}'>`
+        : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${title}">`
+    }
         <div class="movie-info">
           <h3 class="title__info">${title}</h3>
             <div class="overview">
-            <p class="info__genres-and-year">${genreNames.join(
-              ', '
-            )} | ${release_date.slice(0, 4)} </p>          
+            ${
+              genreNames.slice(0, 3).join(', ')
+                ? `<p class="info__genres-and-year">${genreNames
+                    .slice(0, 3)
+                    .join(', ')}
+             | ${release_date.slice(0, 4)} </p>`
+                : `<p class="info__genres-and-year"> N/A
+             | ${release_date.slice(0, 4)} </p>`
+            }          
             </div>
         </div>
     `;
