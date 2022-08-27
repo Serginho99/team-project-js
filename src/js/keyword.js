@@ -56,6 +56,7 @@ function createList(acc, cardFilm) {
   return (
     acc +
     `
+    <div class="movie">
     <img src='${imgUrl + cardFilm.poster_path}' alt='${cardFilm.title}'>
         <div class="movie-info">
           <h3 class="title__info">${cardFilm.title}</h3>
@@ -65,6 +66,7 @@ function createList(acc, cardFilm) {
               .join(', ')}
              | ${cardFilm.release_date.slice(0, 4)} </p>          
             </div>
+        </div>
         </div>
     `
   );
