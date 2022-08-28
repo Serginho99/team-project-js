@@ -55,19 +55,16 @@ function createList(acc, cardFilm) {
   const genreNames = genreArrayOfObj.map(a => a.name);
   return (
     acc +
-    `
-
-    <div class="movie" id=${cardFilm.id}>
-
-    <div class="movie">
+    `<div class="movie">
     <div class="wrapper-img">
-
     ${
       cardFilm.poster_path
-        ? `<img src='${imgUrl + cardFilm.poster_path}' alt='${cardFilm.title}'>`
+        ? `<img src='${imgUrl + cardFilm.poster_path}' alt='${
+            cardFilm.title
+          }' data-id="${cardFilm.id}">`
         : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${
             cardFilm.title
-          }">`
+          }" data-id="${cardFilm.id}">`
     }
     </div>
         <div class="movie-info">
@@ -81,12 +78,10 @@ function createList(acc, cardFilm) {
              | ${cardFilm.release_date.slice(0, 4)} </p>`
                 : `<p class="info__genres-and-year"> N/A
              | ${cardFilm.release_date.slice(0, 4)} </p>`
-            }
-                      
+            }          
             </div>
         </div>
-        </div>
-    `
+        </div>`
   );
 }
 
