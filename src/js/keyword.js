@@ -56,8 +56,12 @@ function createList(acc, cardFilm) {
   return (
     acc +
     `
+
+    <div class="movie" id=${cardFilm.id}>
+
     <div class="movie">
     <div class="wrapper-img">
+
     ${
       cardFilm.poster_path
         ? `<img src='${imgUrl + cardFilm.poster_path}' alt='${cardFilm.title}'>`

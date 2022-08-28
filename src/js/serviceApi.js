@@ -104,8 +104,8 @@ function showMovies(data) {
     <div class="wrapper-img">
     ${
       poster_path
-        ? `<img src='${IMG_URL + poster_path}' alt='${title}'>`
-        : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${title}">`
+        ? `<img src='${IMG_URL + poster_path}' alt='${title}' data-id="${id}">`
+        : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${title}" data-id="${id}">`
     }
     </div>
         <div class="movie-info">
