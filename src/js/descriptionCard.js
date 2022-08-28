@@ -16,11 +16,11 @@ modalOpen.addEventListener('click', event => {
   modalBackdrop.classList.remove('is-hidden');
  
   const isModalOpen = event.target.classList.contains('main');
-  console.log("event.target", event.target);
-  if (!isModalOpen) {
-    return;
-  }
-   console.log('event.target.dataset.id', event.target.dataset.id);
+  // console.log("event.target", event.target);
+  // if (!isModalOpen) {
+  //   return;
+  // }
+  //  console.log('event.target.dataset.id', event.target.dataset.id);
   renderModal(event.target.dataset.id);
 });
 async function fecthCardFilm(id) {
