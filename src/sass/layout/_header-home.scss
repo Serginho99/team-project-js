@@ -267,7 +267,6 @@ input:-webkit-autofill:active {
 
 .logo:hover .animation-wrapper,
 .logo:focus .animation-wrapper {
-  border-radius: 0px;
   animation: running-tape 2s linear infinite
 }
 
@@ -276,11 +275,6 @@ input:-webkit-autofill:active {
   height: 22px;
   border-radius: 4px;
   overflow: hidden;
-}
-
-.animation-running-tape:hover,
-.animation-running-tape:focus {
-  border-radius: 0px;
 }
 
 .animation-running-tape img {
