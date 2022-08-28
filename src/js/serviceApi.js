@@ -101,11 +101,13 @@ function showMovies(data) {
     const genreNames = genreArrayOfObj.map(a => a.name);
 
     movieEl.innerHTML = `
+    <div class="wrapper-img">
     ${
       poster_path
         ? `<img src='${IMG_URL + poster_path}' alt='${title}'>`
         : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${title}">`
     }
+    </div>
         <div class="movie-info">
           <h3 class="title__info">${title}</h3>
             <div class="overview">
