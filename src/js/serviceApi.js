@@ -112,10 +112,10 @@ function showMovies(data) {
           <h3 class="title__info">${title}</h3>
             <div class="overview">
             ${
-              genreNames.slice(0, 3).join(', ')
+              genreNames.slice(0, 2).join(', ')
                 ? `<p class="info__genres-and-year">${genreNames
-                    .slice(0, 3)
-                    .join(', ')}
+                    .slice(0, 2)
+                    .join(', ')}, Other
              | ${release_date.slice(0, 4)} </p>`
                 : `<p class="info__genres-and-year"> N/A
              | ${release_date.slice(0, 4)} </p>`

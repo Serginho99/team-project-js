@@ -71,7 +71,9 @@ function renderCardFilm(cardFilm) {
 
         <div class="modal__wrapper">
           <div class="modal__image">
-            <img
+          ${
+            cardFilm.poster_path
+              ? `<img
             id=${cardFilm.id}
               src="${IMG_URL}${cardFilm.poster_path}"
               alt="${
@@ -80,7 +82,19 @@ function renderCardFilm(cardFilm) {
               width="240"
               height="357"
               class="img"
-            />
+            />`
+              : `<img
+            id=${cardFilm.id}
+              src="${require('/src/images/default-poster-webp.webp')}"
+              alt="${
+                cardFilm.title || cardFilm.original_title || cardFilm.name
+              }"
+              width="240"
+              height="357"
+              class="img"
+            />`
+          }
+            
           </div>
           <div class="modal__content">
             <h3 class="movie__title">${
