@@ -44,7 +44,10 @@ modalOpen.addEventListener('click', event => {
   // }
   //  console.log('event.target.dataset.id', event.target.dataset.id);
   renderModal(event.target.dataset.id);
+
+  document.addEventListener('keydown', onEscClose);
 });
+
 async function fecthCardFilm(id) {
   const response = await axios.get(
     `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
@@ -117,6 +120,13 @@ function renderCardFilm(cardFilm) {
           </div>
         </div>
       </div>`;
+}
+
+function onEscClose(ev) {
+  if (ev.code === 'Escape') {
+    modalBackdrop.classList.add('is-hidden');
+    window.removeEventListener('keydown', onEscClose);
+  }
 }
 
 // закриття модалки
