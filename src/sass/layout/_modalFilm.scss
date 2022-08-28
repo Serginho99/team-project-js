@@ -5,20 +5,18 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-
   opacity: 1;
   transition: opacity 500ms;
   overflow-y: scroll;
   z-index: 3;
 
-  &.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: visibility 500ms, opacity 500ms;
-  }
+}
 
-  display: none;
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 500ms, opacity 500ms;
 }
 
 .modal__close-btn {
