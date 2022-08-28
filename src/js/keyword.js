@@ -56,15 +56,35 @@ function createList(acc, cardFilm) {
   return (
     acc +
     `
-    <img src='${imgUrl + cardFilm.poster_path}' alt='${cardFilm.title}'>
+
+    <div class="movie" id=${cardFilm.id}>
+
+    <div class="movie">
+    <div class="wrapper-img">
+
+    ${
+      cardFilm.poster_path
+        ? `<img src='${imgUrl + cardFilm.poster_path}' alt='${cardFilm.title}'>`
+        : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${
+            cardFilm.title
+          }">`
+    }
+    </div>
         <div class="movie-info">
           <h3 class="title__info">${cardFilm.title}</h3>
             <div class="overview">
-            <p class="info__genres-and-year">${genreNames
-              .slice(0, 3)
-              .join(', ')}
-             | ${cardFilm.release_date.slice(0, 4)} </p>          
+            ${
+              genreNames.slice(0, 3).join(', ')
+                ? `<p class="info__genres-and-year">${genreNames
+                    .slice(0, 3)
+                    .join(', ')}
+             | ${cardFilm.release_date.slice(0, 4)} </p>`
+                : `<p class="info__genres-and-year"> N/A
+             | ${cardFilm.release_date.slice(0, 4)} </p>`
+            }
+                      
             </div>
+        </div>
         </div>
     `
   );

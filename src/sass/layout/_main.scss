@@ -1,49 +1,80 @@
-main {
-  display: flex; 
-  flex-wrap: wrap;
-  justify-content: center;
-}
+//COMMON
 .movie {
-  width: 495px;
-  margin: 1rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%),
+    0 1px 1px rgb(0 0 0 / 14%),
+    0 2px 1px -1px rgb(0 0 0 / 12%);
+  border-radius: 5px;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
-}
-.movie:hover,
-.movie:focus {
-  transform: scale(1.03);
-  
-}
-.movie img {
-  border-radius: 5px;
-  margin-bottom: 10px;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.03);
   }
+}
+
+.movie-info {
+  padding-left: 5px;
+  padding-bottom: 4px;
+}
+
 .title__info {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 10px;
-  color: #000000;
   text-transform: uppercase;
-}
-.info__genres-and-year {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-size: 12px;
+  line-height: 1.33;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 10px;
-  color: #ff6b08;
 }
-.overview__info {
-    visibility: hidden;
+
+.info__genres-and-year {
+  color: var(--accent-color);
+}
+
+//PHONES
+@media screen and (max-width: 767.98px) {
+  .movies-gallery {
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
+
+  .movie:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .movie-info {
+    margin-top: 10px;
+  }
+}
+
+//TABLETS
+@media screen and (min-width: 768px) {
+  .movies-gallery {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .movie-info {
+    margin-top: 8px;
+  }
+}
+
+//DESKTOP
+@media screen and (min-width: 1280px) {
+  .movies-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 32px 16px;
+  }
+
+  .movie-info {
+    margin-top: 12px;
+  }
+
+  .title__info,
+  .info__genres-and-year {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
