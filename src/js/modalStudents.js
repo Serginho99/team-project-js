@@ -1,13 +1,35 @@
 const refs = {
    openModalBtn: document.querySelector("[data-modal-students-open]"),
    closeModalBtn: document.querySelector("[data-modal-students-close]"),
-   modal: document.querySelector("[data-modal-students]"),
-   }
+   backdrop: document.querySelector("[data-modal-students]"),
+};
 
-   refs.openModalBtn.addEventListener("click", toggleModal);
-   refs.closeModalBtn.addEventListener("click", toggleModal);
+refs.openModalBtn.addEventListener('click', onOpenModal);
+refs.closeModalBtn.addEventListener('click', onCloseModal);
+refs.backdrop.addEventListener('click', onBackdropClick);
 
-   function toggleModal(e) {
-      e.preventDefault();
-      refs.modal.classList.toggle("is-hidden-students");
+function onOpenModal(e) {
+   e.preventDefault();
+   window.addEventListener('keydown', onEscKeyPress);
+   refs.backdrop.classList.remove('is-hidden-students');
+}
+
+function onCloseModal() {
+   window.removeEventListener('keydown', onEscKeyPress);
+   refs.backdrop.classList.add('is-hidden-students');
+}
+
+function onBackdropClick(e) {
+   if (e.currentTarget === e.target) {
+   onCloseModal();
    }
+}
+
+function onEscKeyPress(e) {
+   const ESC_KEY_CODE = 'Escape';
+   const isEscKey = e.code === ESC_KEY_CODE;
+
+   if (isEscKey) {
+   onCloseModal();
+   }
+}
