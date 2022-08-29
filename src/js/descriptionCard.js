@@ -124,10 +124,14 @@ function renderCardFilm(cardFilm) {
               cardFilm.overview
             }</p>
             <div class="button__row">
-              <button type="button" class="modal__btn modal__btn-watched">
+              <button type="button" data-id="${
+                cardFilm.id
+              }" class="modal__btn modal__btn-watched">
                 add to watched
               </button>
-              <button type="button" class="modal__btn modal__btn-queue">
+              <button type="button" data-id="${
+                cardFilm.id
+              }" class="modal__btn modal__btn-queue">
                 add to queue
               </button>
             </div>
