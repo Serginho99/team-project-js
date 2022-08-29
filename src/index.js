@@ -1,7 +1,10 @@
 import './js/loader';
 import './js/serviceApi';
 import './js/keyword';
-
+import './js/descriptionCard';
 import './js/modalStudents';
 
-import './js/descriptionCard';
+import './js/firebaseApi';
+import './js/libraryBtns';
+import './js/modalFilm';
+import './js/localStorage';
