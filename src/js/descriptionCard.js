@@ -33,6 +33,7 @@ const modalOpen = document.querySelector('#main');
 const movieEl = document.querySelector('.movie');
 
 document.addEventListener('keydown', onEscClose);
+modalBackdrop.addEventListener('click', handleCloseBackdrop);
 
 //відкриття модалки
 modalOpen.addEventListener('click', event => {
@@ -136,6 +137,13 @@ function renderCardFilm(cardFilm) {
 
 function onEscClose(ev) {
   if (ev.code === 'Escape') {
+    modalBackdrop.classList.add('is-hidden');
+    window.removeEventListener('keydown', onEscClose);
+  }
+}
+
+function handleCloseBackdrop(e) {
+  if (e.currentTarget === e.target) {
     modalBackdrop.classList.add('is-hidden');
     window.removeEventListener('keydown', onEscClose);
   }
