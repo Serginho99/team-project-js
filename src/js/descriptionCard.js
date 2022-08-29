@@ -37,9 +37,7 @@ modalBackdrop.addEventListener('click', handleCloseBackdrop);
 
 //відкриття модалки
 modalOpen.addEventListener('click', event => {
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
+  console.log(event.target);
   modalBackdrop.classList.remove('is-hidden');
   renderModal(event.target.dataset.id);
 });
