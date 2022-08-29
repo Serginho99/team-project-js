@@ -60,11 +60,12 @@ async function renderModal(value) {
 
 function renderCardFilm(cardFilm) {
   return `<div class="modal__container">
-        <button class="modal__close-btn">
+        <div class="modal__close-btn">
           <svg class="modal__close-icon" width="30" height="30">
-            <use href="./images/svg/close.svg"></use>
+            <use href="../images/svg/close.svg#icon-close_button"></use>
           </svg>
-        </button>
+        </div>
+
 
         <div class="modal__wrapper">
           <div class="modal__image">
