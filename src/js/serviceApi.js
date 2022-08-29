@@ -119,7 +119,7 @@ function showMovies(data) {
              | ${release_date.slice(0, 4)} </p>`
                 : `<p class="info__genres-and-year"> N/A
              | ${release_date.slice(0, 4)} </p>`
-            }          
+            }
             </div>
         </div>
     `;
