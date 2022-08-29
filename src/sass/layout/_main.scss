@@ -79,10 +79,13 @@
 
   .wrapper-img {
     height: 574px;
+    pointer-events: none;
   }
 
   .movie-info {
     margin-top: 12px;
+    pointer-events: none;
+    
   }
 
   .title__info,

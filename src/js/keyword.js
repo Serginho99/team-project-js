@@ -55,13 +55,13 @@ function createList(acc, cardFilm) {
   const genreNames = genreArrayOfObj.map(a => a.name);
   return (
     acc +
-    `<div class="movie">
+    `<div class="movie" data-id="${cardFilm.id}">
     <div class="wrapper-img">
     ${
       cardFilm.poster_path
         ? `<img src='${imgUrl + cardFilm.poster_path}' alt='${
             cardFilm.title
-          }' data-id="${cardFilm.id}">`
+          }' data-id="${cardFilm.id}" >`
         : `<img src="${require('/src/images/default-poster-webp.webp')}" alt="${
             cardFilm.title
           }" data-id="${cardFilm.id}">`
