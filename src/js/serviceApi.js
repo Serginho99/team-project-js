@@ -93,6 +93,7 @@ function showMovies(data) {
     } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
+    movieEl.setAttribute('data-id',`${id}`);
 
     let genreArrayOfObj = genres.filter(function (g) {
       return genre_ids.indexOf(g.id) !== -1;
@@ -119,7 +120,7 @@ function showMovies(data) {
              | ${release_date.slice(0, 4)} </p>`
                 : `<p class="info__genres-and-year"> N/A
              | ${release_date.slice(0, 4)} </p>`
-            }          
+            }
             </div>
         </div>
     `;

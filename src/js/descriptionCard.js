@@ -33,10 +33,12 @@ const modalOpen = document.querySelector('#main');
 const movieEl = document.querySelector('.movie');
 
 document.addEventListener('keydown', onEscClose);
+modalBackdrop.addEventListener('click', handleCloseBackdrop);
 
 //відкриття модалки
 modalOpen.addEventListener('click', event => {
-  if (event.target.nodeName !== 'IMG') {
+  // console.log(event.target);
+  if (!event.target.classList.contains('movie')) {
     return;
   }
   modalBackdrop.classList.remove('is-hidden');
@@ -122,10 +124,14 @@ function renderCardFilm(cardFilm) {
               cardFilm.overview
             }</p>
             <div class="button__row">
-              <button type="button" class="modal__btn modal__btn-watched">
+              <button type="button" data-id="${
+                cardFilm.id
+              }" class="modal__btn modal__btn-watched">
                 add to watched
               </button>
-              <button type="button" class="modal__btn modal__btn-queue">
+              <button type="button" data-id="${
+                cardFilm.id
+              }" class="modal__btn modal__btn-queue">
                 add to queue
               </button>
             </div>
@@ -136,6 +142,13 @@ function renderCardFilm(cardFilm) {
 
 function onEscClose(ev) {
   if (ev.code === 'Escape') {
+    modalBackdrop.classList.add('is-hidden');
+    window.removeEventListener('keydown', onEscClose);
+  }
+}
+
+function handleCloseBackdrop(e) {
+  if (e.currentTarget === e.target) {
     modalBackdrop.classList.add('is-hidden');
     window.removeEventListener('keydown', onEscClose);
   }
