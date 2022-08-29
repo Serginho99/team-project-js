@@ -74,7 +74,7 @@ function createList(acc, cardFilm) {
               genreNames.slice(0, 2).join(', ')
                 ? `<p class="info__genres-and-year">${genreNames
                     .slice(0, 2)
-                    .join(', ')}, Other | ${cardFilm.release_date.slice(
+                    .join(', ')} ${(genreNames.length > 2) ? ', Other' : ' '} | ${cardFilm.release_date.slice(
                     0,
                     4
                   )} </p>`

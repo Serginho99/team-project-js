@@ -67,7 +67,7 @@ export function getMovies(url) {
         prev.classList.remove('disabled');
         next.classList.remove('disabled');
       }
-      main.scrollIntoView({ behavior: 'smooth' });
+      
 
       if (data.results.length === 0) {
         console.log('ERROR IN SEARCH');
@@ -116,7 +116,7 @@ function showMovies(data) {
               genreNames.slice(0, 2).join(', ')
                 ? `<p class="info__genres-and-year">${genreNames
                     .slice(0, 2)
-                    .join(', ')}, Other
+                    .join(', ')} ${(genreNames.length > 2) ? ' ' : ', Other'}
              | ${release_date.slice(0, 4)} </p>`
                 : `<p class="info__genres-and-year"> N/A
              | ${release_date.slice(0, 4)} </p>`
@@ -142,6 +142,7 @@ prev.addEventListener('click', () => {
 });
 
 function pageCall(page) {
+  main.scrollIntoView({ behavior: 'smooth' });
   let urlSplit = lastUrl.split('?');
   let queryParams = urlSplit[1].split('?');
   let key = queryParams[queryParams.length - 1].split('=');
