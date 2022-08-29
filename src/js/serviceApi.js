@@ -93,6 +93,7 @@ function showMovies(data) {
     } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
+    movieEl.setAttribute('data-id',`${id}`);
 
     let genreArrayOfObj = genres.filter(function (g) {
       return genre_ids.indexOf(g.id) !== -1;
