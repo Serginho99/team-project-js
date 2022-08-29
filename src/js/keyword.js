@@ -82,7 +82,8 @@ function createList(acc, cardFilm) {
                     0,
                     4
                   )} </p>`
-            }          
+            }
+            <span class="vote_average">${cardFilm.vote_average}</span> 
             </div>
         </div>
         </div>`

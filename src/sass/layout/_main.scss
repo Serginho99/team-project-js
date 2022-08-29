@@ -30,9 +30,31 @@
   line-height: 1.33;
   font-weight: 500;
 }
+.overview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .info__genres-and-year {
   color: var(--accent-color);
+}
+.vote_average {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  display: inline-block;
+  margin-left: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 40px;
+  height: 20px;
+  border-radius: 5px;
+  text-align: center;
+  color: #eee;
+  background-color: #ff6b08;
 }
 
 //PHONES
