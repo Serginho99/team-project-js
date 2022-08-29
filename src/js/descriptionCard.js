@@ -37,7 +37,10 @@ modalBackdrop.addEventListener('click', handleCloseBackdrop);
 
 //відкриття модалки
 modalOpen.addEventListener('click', event => {
-  console.log(event.target);
+  // console.log(event.target);
+  if (!event.target.classList.contains('movie')) {
+    return;
+  }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(event.target.dataset.id);
 });
