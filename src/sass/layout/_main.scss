@@ -36,11 +36,34 @@
   line-height: 1.33;
   font-weight: 500;
 }
+.overview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
 
 .info__genres-and-year {
   color: var(--accent-color);
 }
 
+.vote_average {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #ff6b08;
+  width: 40px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 1.17;
+  text-align: center;
+}
 //PHONES
 @media screen and (max-width: 767.98px) {
   .movies-gallery {
