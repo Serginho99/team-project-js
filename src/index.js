@@ -5,3 +5,4 @@ import './js/keyword';
 import './js/modalStudents';
 
 import './js/descriptionCard';
+import './js/modalBtnClose';
