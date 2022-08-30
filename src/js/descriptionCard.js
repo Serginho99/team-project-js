@@ -29,17 +29,19 @@ const genres = [
 ];
 
 const modalBackdrop = document.querySelector('.modal__backdrop');
+const modalRender = document.querySelector('.modal__render');
 const modalOpen = document.querySelector('#main');
 const movieEl = document.querySelector('.movie');
+
 
 document.addEventListener('keydown', onEscClose);
 modalBackdrop.addEventListener('click', handleCloseBackdrop);
 
 //відкриття модалки
 modalOpen.addEventListener('click', event => {
-  // console.log(event.target);
+ 
   if (!event.target.classList.contains('movie')) {
-    return;
+  return;
   }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(event.target.dataset.id);
@@ -49,25 +51,19 @@ async function fecthCardFilm(id) {
   const response = await axios.get(
     `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
   );
-  // console.log(response.data)
   return response.data;
+  
 }
 async function renderModal(value) {
   const cardFilm = await fecthCardFilm(value);
-  // console.log(cardFilm);
-  modalBackdrop.insertAdjacentHTML('beforeend', renderCardFilm(cardFilm));
+  modalRender.innerHTML = '';
+  modalRender.insertAdjacentHTML('beforeend', renderCardFilm(cardFilm));
+ 
 }
 
 function renderCardFilm(cardFilm) {
-  return `<div class="modal__container">
-        <div class="modal__close-btn">
-          <svg class="modal__close-icon" width="30" height="30">
-            <use href="../images/svg/close.svg#icon-close_button"></use>
-          </svg>
-        </div>
-
-
-        <div class="modal__wrapper">
+  return `
+          <div class="modal__wrapper">
           <div class="modal__image">
           ${
             cardFilm.poster_path
@@ -137,8 +133,7 @@ function renderCardFilm(cardFilm) {
               </button>
             </div>
           </div>
-        </div>
-      </div>`;
+        </div>`;
 }
 
 function onEscClose(ev) {
@@ -154,3 +149,6 @@ function handleCloseBackdrop(e) {
     window.removeEventListener('keydown', onEscClose);
   }
 }
+
+
+
