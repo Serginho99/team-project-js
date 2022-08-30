@@ -5,7 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
+    <link
+      type="image/x-icon"
+      href="./images/logo-black-favicon.svg"
+      rel="shortcut icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -13,6 +21,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
     <div class="mask">
@@ -39,7 +48,7 @@
         </nav>
         <ul class="btn-list list">
           <li class="btn-list__item">
-            <button type="button" class="button watched-btn button-active">
+            <button type="button" class="button watched-btn">
               WATCHED
             </button>
           </li class="btn-list__item">
@@ -49,7 +58,10 @@
     </header>
     <main>
       <div class="container">
-        Рендер из локал сторедж сюда(наверно:D)
+        <div class="library-wrapper">
+          <p class="library-text">Your library is empty, please add some films</p>
+        <a href="./index.html" class="library-link link">Choose film</a>
+        </div>
       </div>
     </main>
     <footer>
