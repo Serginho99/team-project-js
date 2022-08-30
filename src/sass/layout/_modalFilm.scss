@@ -34,11 +34,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow: auto;
+  // height: 90vh;
 }
 
 .modal__wrapper {
   max-height: calc(100vh - 130px);
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .modal__image {
@@ -58,7 +60,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 23px;
 }
 
@@ -73,8 +75,8 @@
 .modal__overview {
   margin-bottom: 20px;
   font-weight: 500;
-  font-size: 11px;
-  line-height: 15px;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .modal__meta {
@@ -148,9 +150,22 @@ dd i {
     background-color: var(--accent-color);
 
     &:after {
-      display: none;
+      // display: none;
     }
   }
+}
+.modal__btn-watched {
+  width: 112px;
+  height: 44px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-right: 14px;
+}
+.modal__btn-queue {
+  width: 112px;
+  height: 44px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 // -----------------------------------------
@@ -196,7 +211,9 @@ dd i {
 
   .img {
     width: 264px;
-    margin: 0;
+    // margin: 0;
+    max-width: 100%;
+    // display: block;
   }
 
   .modal__btn {
@@ -204,7 +221,7 @@ dd i {
     max-width: 124px;
   }
   .movie__title {
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
 }
@@ -221,10 +238,6 @@ dd i {
     margin-bottom: 20px;
     font-weight: 500;
   }
-
-  // .modal__image {
-  //   flex: 0 1 396px;
-  // }
 
   .modal__content {
     flex: 1 1 calc(100% - 428px);
