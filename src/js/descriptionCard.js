@@ -43,6 +43,7 @@ modalOpen.addEventListener('click', event => {
   }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(event.target.dataset.id);
+  document.body.classList.toggle('modal-open');
 });
 
 async function fecthCardFilm(id) {
@@ -179,6 +180,7 @@ function onEscClose(ev) {
     window.removeEventListener('keydown', onEscClose);
     btnWatched.remove();
     btnQueue.remove();
+    document.body.classList.toggle('modal-open');
   }
 }
 
@@ -190,5 +192,6 @@ function handleCloseBackdrop(e) {
     window.removeEventListener('keydown', onEscClose);
     btnWatched.remove();
     btnQueue.remove();
+    document.body.classList.toggle('modal-open');
   }
 }

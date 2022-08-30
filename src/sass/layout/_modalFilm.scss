@@ -11,6 +11,10 @@
   z-index: 3;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -18,12 +22,12 @@
   transition: visibility 500ms, opacity 500ms;
 }
 
-.modal__close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: none;
-}
+// .modal__close-btn {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   border: none;
+// }
 
 // -------------------------------------------------
 .modal__container {
@@ -54,6 +58,7 @@
 
 .modal__content {
   color: #000000;
+  padding-bottom: 20px;
 }
 
 .movie__title {
@@ -149,11 +154,11 @@ dd i {
     outline: none;
     background-color: var(--accent-color);
 
-    &:after {
-      // display: none;
-    }
+    // &:after {
+    // display: none;
   }
 }
+
 .modal__btn-watched {
   width: 112px;
   height: 44px;
@@ -187,15 +192,29 @@ dd i {
     line-height: 1.33;
     width: 112px;
     height: 44px;
+    &.active,
+    &:hover,
+    &:focus {
+      color: var(--primary-bg-color);
+      outline: none;
+      background-color: var(--accent-color);
+    }
     // padding-left: 8px;
     // padding-right: 8px;
   }
-  .modal__btn-queue {
-    line-height: 1.33;
-    width: 112px;
-    height: 44px;
-    // padding-left: 8px;
-    // padding-right: 8px;
+}
+.modal__btn-queue {
+  line-height: 1.33;
+  width: 112px;
+  height: 44px;
+  // padding-left: 8px;
+  // padding-right: 8px;
+  &.active,
+  &:hover,
+  &:focus {
+    color: var(--primary-bg-color);
+    outline: none;
+    background-color: var(--accent-color);
   }
 
   .modal__image {
@@ -212,13 +231,19 @@ dd i {
   .img {
     width: 264px;
     // margin: 0;
-    max-width: 100%;
     // display: block;
   }
 
   .modal__btn {
     // padding: 14px;
     max-width: 124px;
+    &.active,
+    &:hover,
+    &:focus {
+      color: var(--primary-bg-color);
+      outline: none;
+      background-color: var(--accent-color);
+    }
   }
   .movie__title {
     font-size: 20px;
@@ -254,11 +279,32 @@ dd i {
 
   .modal__btn {
     max-width: 136px;
+    &.active,
+    &:hover,
+    &:focus {
+      color: var(--primary-bg-color);
+      outline: none;
+      background-color: var(--accent-color);
+    }
   }
 }
-.btn{
+.btn {
   width: 30px;
   height: 30px;
   background-image: url(/src/images/svg/closeii.svg);
   background-color: #ffffff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &__cross {
+    fill: #000000;
+  }
 }
