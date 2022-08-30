@@ -1,12 +1,12 @@
 
 const refs = {
-    closeModalBtn: document.querySelector("[data-modal-close]"),
-    backdrop: document.querySelector(".modal__backdrop"),
-
+    closeModalBtns: document.querySelector("[data-modal-close]"),
+    backdrops: document.querySelector(".modal__backdrop")
 };
 
-refs.closeModalBtn.addEventListener('click', onCloseModal);
+refs.closeModalBtns.addEventListener('click', onCloseModal);
+
 function onCloseModal() {
-    refs.backdrop.classList.add('.is-hidden');
-    
+     refs.backdrops.classList.add('is-hidden');
 }
+
