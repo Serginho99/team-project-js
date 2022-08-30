@@ -34,16 +34,14 @@ const modalOpen = document.querySelector('#main');
 const movieEl = document.querySelector('.movie');
 
 
-
-
 document.addEventListener('keydown', onEscClose);
 modalBackdrop.addEventListener('click', handleCloseBackdrop);
 
 //відкриття модалки
 modalOpen.addEventListener('click', event => {
-  // console.log(event.target);
+ 
   if (!event.target.classList.contains('movie')) {
-    return;
+  return;
   }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(event.target.dataset.id);
@@ -53,12 +51,12 @@ async function fecthCardFilm(id) {
   const response = await axios.get(
     `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
   );
-  // console.log(response.data)
   return response.data;
+  
 }
 async function renderModal(value) {
   const cardFilm = await fecthCardFilm(value);
-  // console.log(cardFilm);
+  modalRender.innerHTML = '';
   modalRender.insertAdjacentHTML('beforeend', renderCardFilm(cardFilm));
  
 }
