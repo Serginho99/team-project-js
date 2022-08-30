@@ -33,15 +33,13 @@ const modalRender = document.querySelector('.modal__render');
 const modalOpen = document.querySelector('#main');
 const movieEl = document.querySelector('.movie');
 
-
 document.addEventListener('keydown', onEscClose);
 modalBackdrop.addEventListener('click', handleCloseBackdrop);
 
 //відкриття модалки
 modalOpen.addEventListener('click', event => {
- 
   if (!event.target.classList.contains('movie')) {
-  return;
+    return;
   }
   modalBackdrop.classList.remove('is-hidden');
   renderModal(event.target.dataset.id);
@@ -52,13 +50,50 @@ async function fecthCardFilm(id) {
     `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
   );
   return response.data;
-  
 }
 async function renderModal(value) {
   const cardFilm = await fecthCardFilm(value);
   modalRender.innerHTML = '';
   modalRender.insertAdjacentHTML('beforeend', renderCardFilm(cardFilm));
- 
+
+  addBtnQueue(value);
+  addBtnWatch(value);
+}
+
+const LOCAL_WATCHED = 'watched';
+const LOCAL_QUEUE = 'queue';
+
+const movieDataWatched = localStorage.getItem(LOCAL_WATCHED)
+  ? JSON.parse(localStorage.getItem(LOCAL_WATCHED))
+  : {};
+
+const movieDataQueue = localStorage.getItem(LOCAL_QUEUE)
+  ? JSON.parse(localStorage.getItem(LOCAL_QUEUE))
+  : {};
+
+function addBtnWatch(value) {
+  const btnWatched = document.querySelector('.modal__btn-watched');
+  btnWatched.addEventListener('click', addToWatch);
+  console.log(btnWatched);
+
+  function addToWatch() {
+    movieDataWatched[value] = value;
+    localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
+    delete movieDataQueue[value];
+    localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
+  }
+}
+
+function addBtnQueue(value) {
+  const btnQueue = document.querySelector('.modal__btn-queue');
+  btnQueue.addEventListener('click', addToQueue);
+
+  function addToQueue() {
+    movieDataQueue[value] = value;
+    localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
+    delete movieDataWatched[value];
+    localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
+  }
 }
 
 function renderCardFilm(cardFilm) {
@@ -137,18 +172,23 @@ function renderCardFilm(cardFilm) {
 }
 
 function onEscClose(ev) {
+  const btnQueue = document.querySelector('.modal__btn-queue');
+  const btnWatched = document.querySelector('.modal__btn-watched');
   if (ev.code === 'Escape') {
     modalBackdrop.classList.add('is-hidden');
     window.removeEventListener('keydown', onEscClose);
+    btnWatched.remove();
+    btnQueue.remove();
   }
 }
 
 function handleCloseBackdrop(e) {
+  const btnQueue = document.querySelector('.modal__btn-queue');
+  const btnWatched = document.querySelector('.modal__btn-watched');
   if (e.currentTarget === e.target) {
     modalBackdrop.classList.add('is-hidden');
     window.removeEventListener('keydown', onEscClose);
+    btnWatched.remove();
+    btnQueue.remove();
   }
 }
-
-
-
