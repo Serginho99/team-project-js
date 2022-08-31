@@ -1,48 +1,53 @@
 footer {
   background-color: #f7f7f7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 40px;
 }
 
 .footer__link {
-  display: block;
   text-align: center;
-  padding-bottom: 30px;
-  padding-top: 29px;
-  align-items: center;
   color: #545454;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1.14;
 }
+
 .heart__svg {
   width: 14px;
   height: 12.75px;
   fill: #ff6b08;
-}
-.footer__text {
-  display: block;
-  padding-bottom: 10px;
-  // margin-right: 10px;
-}
-.footer__second_text {
-  margin-left: 10px;
-  margin-right: 5px;
-}
-.footer__sp {
-  text-decoration: none;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
-// media screen 768
-@media screen and(min-width:768px) {
+.footer__text-first {
+  display: block;
+  margin-bottom: 10px;
+}
+
+footer button {
+  background-color: transparent;
+  color: #545454;
+  text-decoration: underline;
+}
+
+// media screen 768px
+@media screen and (min-width: 768px) {
+
+  footer {
+    margin-top: 60px;
+  }
+
   .footer__link {
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    align-items: baseline;
-    padding-top: 30px;
-    padding-bottom: 28px;
-    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.17;
+    align-items: center;
   }
-  .footer__text {
-    font-size: 16;
+
+  .footer__text-first {
+    margin-bottom: 0;
   }
 }
