@@ -1,87 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="all">
-  <meta name="description"
-    content="Search movie library with variaties of films, different genres, average vote and comfortable interface">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="all" />
+    <meta
+      name="description"
+      content="Search movie library with variaties of films, different genres, average vote and comfortable interface"
+    />
 
-  <title>Filmoteka - film, movie, search movie library, cinema, movie theatre, genres, high average vote</title>
-  <link type="image/x-icon" href="./images/logo-black-favicon.svg" rel="shortcut icon" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./sass/index.scss" />
-</head>
+    <title>
+      Filmoteka - film, movie, search movie library, cinema, movie theatre,
+      genres, high average vote
+    </title>
+    <link
+      type="image/x-icon"
+      href="./images/logo-black-favicon.svg"
+      rel="shortcut icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
 
-<body>
-  <!-- <include src="./partials/loader.html"></include>
+  <body>
+    <!-- <include src="./partials/loader.html"></include>
     <include src="./partials/header.html"></include>
     <include src="./partials/main.html"></include>
     <include src="./partials/pagination.html"></include>
     <include src="./partials/footer.html"></include>
     <include src="./partials/modal.html"></include>
     <include src="./partials/students-modal.html"></include> -->
-  <div class="mask">
-    <div class="loader"></div>
-  </div>
-  <header class="overlay-home">
-    <div class="container header-container">
-      <nav class="navigation">
-        <a class="logo link" href="./index.html">
-          <div class="animation-running-tape">
-            <div class="animation-wrapper">
-              <img src="./images/logo-for-animation.svg" alt="logo" />
+    <div class="mask">
+      <div class="loader"></div>
+    </div>
+    <header class="overlay-home">
+      <div class="container header-container">
+        <nav class="navigation">
+          <a class="logo link" href="./index.html">
+            <div class="animation-running-tape">
+              <div class="animation-wrapper">
+                <img src="./images/logo-for-animation.svg" alt="logo" />
+              </div>
             </div>
-          </div>
-          <span class="logo-text">Filmoteka</span>
-        </a>
-        <ul class="nav-list list">
-          <li class="nav-list-item current-page">
-            <a class="link nav-list-link" href="./index.html">Home</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="link nav-list-link" href="./library.html">My library</a>
-          </li>
-        </ul>
-      </nav>
-      <form class="form">
-        <input class="form-input" name="searchQuery" type="text" placeholder="Movie search" />
-        <button class="form-button" type="submit">
-          <img src="./images/search-icon.svg" alt="search icon" width="12" height="12" />
-        </button>
-      </form>
-    </div>
-  </header>
-  <main id="main" class="container movies-gallery"></main>
-
-  <!-- ❗️❗️❗️ Add partials like so for every page -->
-  <!-- <include src="./partials/example.html"></include> -->
-  <div class="pagination">
-    <div class="page arrow-left" id="prev"></div>
-    <div class="current" id="current">1</div>
-    <div class="page arrow-right" id="next"></div>
-  </div>
-  <!-- <include src="./partials/footer.html"></include> -->
-  <footer>
-    <div class="footer__container container">
-      <div class="footer__link">
-        <span class="footer__text-first">
-          © 2021 | All Rights Reserved |&nbsp</span><span class="footer__text-second">Developed with</span>
-        <svg class="heart__svg">
-          <use href="./images/svg/heart.svg#icon-heart"></use>
-        </svg>
-        <span>by&nbsp</span>
-        <button data-modal-students-open type="button" class="team-btn">
-          GoIT Students
-        </button>
+            <span class="logo-text">Filmoteka</span>
+          </a>
+          <ul class="nav-list list">
+            <li class="nav-list-item current-page">
+              <a class="link nav-list-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-list-item">
+              <a class="link nav-list-link" href="./library.html">My library</a>
+            </li>
+          </ul>
+        </nav>
+        <form class="form">
+          <input
+            class="form-input"
+            name="searchQuery"
+            type="text"
+            placeholder="Movie search"
+          />
+          <button class="form-button" type="submit">
+            <img
+              src="./images/search-icon.svg"
+              alt="search icon"
+              width="12"
+              height="12"
+            />
+          </button>
+        </form>
       </div>
+    </header>
+    <main id="main" class="container movies-gallery"></main>
+    <button type="button" class="load-more load-button is-hidden">
+      load more
+    </button>
+
+    <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <!-- <include src="./partials/example.html"></include> -->
+    <div class="pagination">
+      <div class="page arrow-left" id="prev"></div>
+      <div class="current" id="current">1</div>
+      <div class="page arrow-right" id="next"></div>
     </div>
-  </footer>
-  <!-- Modal window - film card------- -->
-  <!-- <div class="lightbox js-lightbox">
+    <!-- <include src="./partials/footer.html"></include> -->
+    <footer>
+      <div class="footer__container container">
+        <div class="footer__link">
+          <span class="footer__text-first">
+            © 2021 | All Rights Reserved |&nbsp</span
+          ><span class="footer__text-second">Developed with</span>
+          <svg class="heart__svg">
+            <use href="./images/svg/heart.svg#icon-heart"></use>
+          </svg>
+          <span>by&nbsp</span>
+          <button data-modal-students-open type="button" class="team-btn">
+            GoIT Students
+          </button>
+        </div>
+      </div>
+    </footer>
+    <!-- Modal window - film card------- -->
+    <!-- <div class="lightbox js-lightbox">
       <div class="lightbox__overlay"></div>
 
       <div class="lightbox__content">
@@ -90,136 +120,161 @@
       </div>
     </div> -->
 
-  <div class="modal__backdrop is-hidden">
-    <div class="modal__container">
-      <button type="button" class="btn" data-modal-close></button>
-      <div class="modal__render"></div>
+    <div class="modal__backdrop is-hidden">
+      <div class="modal__container">
+        <button type="button" class="btn" data-modal-close></button>
+        <div class="modal__render"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- STUDENTS MODAL -->
-  <div class="backdrop-students is-hidden-students" data-modal-students>
-    <div class="modal-students">
-      <button type="button" class="modal-students__close-btn" data-modal-students-close>
-        <svg width="15" height="15">
-          <use href="./images/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
-      <h2 class="students-list__title">
-        <span class="students-list__title--text">GO</span><span class="students-list__title--text2">IT</span>Students
-        Team
-      </h2>
-      <ul class="students-list list">
-        <li class="students-list__card">
-          <div class="students-list__img-wrapper">
-            <img src="./images/students/serhii.jpg" alt="Serhii" />
-          </div>
-          <div class="students-list__content-wrapper">
-            <h3 class="students-list__name">Serhii Ostroverkh</h3>
-            <div class="students-list__link-wrapper">
-              <p class="students-list__position">Team Lead</p>
-              <a class="students-list__link link" href="https://github.com/Serginho99" target="_blank"><svg width="15"
-                  height="15">
-                  <use href="./images/sprite.svg#icon-github"></use>
-                </svg></a>
+    <!-- STUDENTS MODAL -->
+    <div class="backdrop-students is-hidden-students" data-modal-students>
+      <div class="modal-students">
+        <button
+          type="button"
+          class="modal-students__close-btn"
+          data-modal-students-close
+        >
+          <svg width="15" height="15">
+            <use href="./images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <h2 class="students-list__title">
+          <span class="students-list__title--text">GO</span
+          ><span class="students-list__title--text2">IT</span>Students Team
+        </h2>
+        <ul class="students-list list">
+          <li class="students-list__card">
+            <div class="students-list__img-wrapper">
+              <img src="./images/students/serhii.jpg" alt="Serhii" />
             </div>
-          </div>
-        </li>
-        <li class="students-list__card">
-          <div class="students-list__img-wrapper">
-            <img src="./images/students/roman.jpg" alt="Roman" />
-          </div>
-          <div class="students-list__content-wrapper">
-            <h3 class="students-list__name">Roman Kozhushko</h3>
-            <div class="students-list__link-wrapper">
-              <p class="students-list__position">Scrum Master</p>
-              <a class="students-list__link link" href="https://github.com/RomanKozhushko" target="_blank"><svg
-                  width="15" height="15">
-                  <use href="./images/sprite.svg#icon-github"></use>
-                </svg></a>
+            <div class="students-list__content-wrapper">
+              <h3 class="students-list__name">Serhii Ostroverkh</h3>
+              <div class="students-list__link-wrapper">
+                <p class="students-list__position">Team Lead</p>
+                <a
+                  class="students-list__link link"
+                  href="https://github.com/Serginho99"
+                  target="_blank"
+                  ><svg width="15" height="15">
+                    <use href="./images/sprite.svg#icon-github"></use></svg
+                ></a>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+          <li class="students-list__card">
+            <div class="students-list__img-wrapper">
+              <img src="./images/students/roman.jpg" alt="Roman" />
+            </div>
+            <div class="students-list__content-wrapper">
+              <h3 class="students-list__name">Roman Kozhushko</h3>
+              <div class="students-list__link-wrapper">
+                <p class="students-list__position">Scrum Master</p>
+                <a
+                  class="students-list__link link"
+                  href="https://github.com/RomanKozhushko"
+                  target="_blank"
+                  ><svg width="15" height="15">
+                    <use href="./images/sprite.svg#icon-github"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
 
-        <li class="students-list__card">
-          <div class="students-list__img-wrapper">
-            <img src="./images/students/maryna.jpg" alt="Maryna" />
-          </div>
-          <div class="students-list__content-wrapper">
-            <h3 class="students-list__name">Maryna Galieva</h3>
-            <div class="students-list__link-wrapper">
-              <p class="students-list__position">Developer</p>
-              <a class="students-list__link link" href="https://github.com/maryna-haliieva" target="_blank"><svg
-                  width="15" height="15">
-                  <use href="./images/sprite.svg#icon-github"></use>
-                </svg></a>
+          <li class="students-list__card">
+            <div class="students-list__img-wrapper">
+              <img src="./images/students/maryna.jpg" alt="Maryna" />
             </div>
-          </div>
-        </li>
-        <li class="students-list__card">
-          <div class="students-list__img-wrapper">
-            <img src="./images/students/uliana.jpg" alt="Uliana" />
-          </div>
-          <div class="students-list__content-wrapper">
-            <h3 class="students-list__name">Uliana Vasylchenko</h3>
-            <div class="students-list__link-wrapper">
-              <p class="students-list__position">Developer</p>
-              <a class="students-list__link link" href="https://github.com/ulianabarnas" target="_blank"><svg width="15"
-                  height="15">
-                  <use href="./images/sprite.svg#icon-github"></use>
-                </svg></a>
+            <div class="students-list__content-wrapper">
+              <h3 class="students-list__name">Maryna Galieva</h3>
+              <div class="students-list__link-wrapper">
+                <p class="students-list__position">Developer</p>
+                <a
+                  class="students-list__link link"
+                  href="https://github.com/maryna-haliieva"
+                  target="_blank"
+                  ><svg width="15" height="15">
+                    <use href="./images/sprite.svg#icon-github"></use></svg
+                ></a>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="students-list__card">
-          <div class="students-list__img-wrapper">
-            <img src="./images/students/iryna.jpg" alt="Iryna" />
-          </div>
-          <div class="students-list__content-wrapper">
-            <h3 class="students-list__name">Iryna Petrenko</h3>
-            <div class="students-list__link-wrapper">
-              <p class="students-list__position">Developer</p>
-              <a class="students-list__link link" href="https://github.com/IrynaPet" target="_blank"><svg width="15"
-                  height="15">
-                  <use href="./images/sprite.svg#icon-github"></use>
-                </svg></a>
+          </li>
+          <li class="students-list__card">
+            <div class="students-list__img-wrapper">
+              <img src="./images/students/uliana.jpg" alt="Uliana" />
             </div>
-          </div>
-        </li>
-        <li class="students-list__card">
-          <div class="students-list__img-wrapper">
-            <img src="./images/students/eugene.jpg" alt="Eugene" />
-          </div>
-          <div class="students-list__content-wrapper">
-            <h3 class="students-list__name">Eugene Gorohov</h3>
-            <div class="students-list__link-wrapper">
-              <p class="students-list__position">Developer</p>
-              <a class="students-list__link link" href="https://github.com/Shvaider" target="_blank"><svg width="15"
-                  height="15">
-                  <use href="./images/sprite.svg#icon-github"></use>
-                </svg></a>
+            <div class="students-list__content-wrapper">
+              <h3 class="students-list__name">Uliana Vasylchenko</h3>
+              <div class="students-list__link-wrapper">
+                <p class="students-list__position">Developer</p>
+                <a
+                  class="students-list__link link"
+                  href="https://github.com/ulianabarnas"
+                  target="_blank"
+                  ><svg width="15" height="15">
+                    <use href="./images/sprite.svg#icon-github"></use></svg
+                ></a>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="students-list__card">
-          <div class="students-list__img-wrapper">
-            <img src="./images/students/pavlo.jpg" alt="Pavlo" />
-          </div>
-          <div class="students-list__content-wrapper">
-            <h3 class="students-list__name">Pavlo Shymko</h3>
-            <div class="students-list__link-wrapper">
-              <p class="students-list__position">Developer</p>
-              <a class="students-list__link link" href="https://github.com/pavlo-shymko" target="_blank"><svg width="15"
-                  height="15">
-                  <use href="./images/sprite.svg#icon-github"></use>
-                </svg></a>
+          </li>
+          <li class="students-list__card">
+            <div class="students-list__img-wrapper">
+              <img src="./images/students/iryna.jpg" alt="Iryna" />
             </div>
-          </div>
-        </li>
-      </ul>
+            <div class="students-list__content-wrapper">
+              <h3 class="students-list__name">Iryna Petrenko</h3>
+              <div class="students-list__link-wrapper">
+                <p class="students-list__position">Developer</p>
+                <a
+                  class="students-list__link link"
+                  href="https://github.com/IrynaPet"
+                  target="_blank"
+                  ><svg width="15" height="15">
+                    <use href="./images/sprite.svg#icon-github"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
+          <li class="students-list__card">
+            <div class="students-list__img-wrapper">
+              <img src="./images/students/eugene.jpg" alt="Eugene" />
+            </div>
+            <div class="students-list__content-wrapper">
+              <h3 class="students-list__name">Eugene Gorohov</h3>
+              <div class="students-list__link-wrapper">
+                <p class="students-list__position">Developer</p>
+                <a
+                  class="students-list__link link"
+                  href="https://github.com/Shvaider"
+                  target="_blank"
+                  ><svg width="15" height="15">
+                    <use href="./images/sprite.svg#icon-github"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
+          <li class="students-list__card">
+            <div class="students-list__img-wrapper">
+              <img src="./images/students/pavlo.jpg" alt="Pavlo" />
+            </div>
+            <div class="students-list__content-wrapper">
+              <h3 class="students-list__name">Pavlo Shymko</h3>
+              <div class="students-list__link-wrapper">
+                <p class="students-list__position">Developer</p>
+                <a
+                  class="students-list__link link"
+                  href="https://github.com/pavlo-shymko"
+                  target="_blank"
+                  ><svg width="15" height="15">
+                    <use href="./images/sprite.svg#icon-github"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <script type="module" src="./index.js"></script>
-</body>
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>
