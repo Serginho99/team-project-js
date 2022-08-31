@@ -12,7 +12,8 @@ footer {
   font-size: 14px;
   line-height: 1.14;
 
-  &:hover .heart__svg {
+  &:hover .heart__svg,
+  &:focus .heart__svg {
     animation: beat .35s infinite alternate;
     transform-origin: center;
   }
