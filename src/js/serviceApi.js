@@ -67,7 +67,6 @@ export function getMovies(url) {
         prev.classList.remove('disabled');
         next.classList.remove('disabled');
       }
-      
 
       if (data.results.length === 0) {
         console.log('ERROR IN SEARCH');
@@ -93,7 +92,7 @@ function showMovies(data) {
     } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
-    movieEl.setAttribute('data-id',`${id}`);
+    movieEl.setAttribute('data-id', `${id}`);
 
     let genreArrayOfObj = genres.filter(function (g) {
       return genre_ids.indexOf(g.id) !== -1;
@@ -116,7 +115,7 @@ function showMovies(data) {
               genreNames.slice(0, 2).join(', ')
                 ? `<p class="info__genres-and-year">${genreNames
                     .slice(0, 2)
-                    .join(', ')} ${(genreNames.length > 2) ? ' ' : ', Other'}
+                    .join(', ')} ${genreNames.length > 2 ? ' ' : ', Other'}
              | ${release_date.slice(0, 4)} </p>`
                 : `<p class="info__genres-and-year"> N/A
              | ${release_date.slice(0, 4)} </p>`
