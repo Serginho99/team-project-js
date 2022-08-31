@@ -6,3 +6,4 @@ import './js/modalStudents';
 
 import './js/descriptionCard';
 import './js/modalBtnClose';
+import './js/library';
