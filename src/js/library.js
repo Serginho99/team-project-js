@@ -13,14 +13,18 @@ watchedBtn.addEventListener('click', onWatchedBtnClick);
 queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onWatchedBtnClick() {
-   mainLib.innerHTML = '';
    if (localStorage.getItem("watched") === null) {
-      const emptyMarkUp = `<p class="library-text">
-            Your library is empty, please add some films
+      const emptyMarkUp = `<div class="container">
+        <div class="library-wrapper">
+          <p class="library-text">
+            No watched films yet, let's look some
           </p>
-          <a href="./index.html" class="library-link link">Choose film</a>`;
-      libWrapper.innerHTML = emptyMarkUp;
+          <a href="./index.html" class="library-link link">Choose film</a>
+        </div>
+      </div>`;
+      return mainLib.innerHTML = emptyMarkUp;
    }
+   mainLib.innerHTML = '';
   renderWatchedFilmsContainer();
 }
 
@@ -139,8 +143,8 @@ function onQueueBtn() {
 if (localStorage.getItem("watched") !== null) {
    onWatchedBtnClick();
    
-   if (localStorage.getItem("queue") !== null) {
-      onQueueBtnClick();
-      onQueueBtn();
-   }
+   // if (localStorage.getItem("queue") !== null) {
+   //    onQueueBtnClick();
+   //    onQueueBtn();
+   // }
 }
