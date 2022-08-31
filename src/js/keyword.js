@@ -1,10 +1,12 @@
 import axios from 'axios';
+import { Notify } from 'notiflix';
 
 const apiKey = 'd7be37f171d8123214539749ff0838e8';
 const baseUrl = 'https://api.themoviedb.org/3';
 const imgUrl = 'https://image.tmdb.org/t/p/w500';
 const form = document.querySelector('.form');
 const main = document.querySelector('#main');
+const inputEl = document.querySelector('.form-input');
 
 const genres = [
   { id: 28, name: 'Action' },
@@ -74,10 +76,9 @@ function createList(acc, cardFilm) {
               genreNames.slice(0, 2).join(', ')
                 ? `<p class="info__genres-and-year">${genreNames
                     .slice(0, 2)
-                    .join(', ')} ${(genreNames.length > 2) ? ', Other' : ' '} | ${cardFilm.release_date.slice(
-                    0,
-                    4
-                  )} </p>`
+                    .join(', ')} ${
+                    genreNames.length > 2 ? ', Other' : ' '
+                  } | ${cardFilm.release_date.slice(0, 4)} </p>`
                 : `<p class="info__genres-and-year"> N/A | ${cardFilm.release_date.slice(
                     0,
                     4
