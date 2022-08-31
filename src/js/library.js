@@ -7,12 +7,20 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const watchedBtn = document.querySelector('.watched-btn');
 const queueBtn = document.querySelector('.queue-btn');
 const mainLib = document.querySelector('#main-library');
+const libWrapper = document.querySelector('.library-wrapper')
 
 watchedBtn.addEventListener('click', onWatchedBtnClick);
 queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onWatchedBtnClick() {
-  mainLib.innerHTML = '';
+   mainLib.innerHTML = '';
+   if (localStorage.getItem("watched") === null) {
+      const emptyMarkUp = `<p class="library-text">
+            Your library is empty, please add some films
+          </p>
+          <a href="./index.html" class="library-link link">Choose film</a>`;
+      libWrapper.innerHTML = emptyMarkUp;
+   }
   renderWatchedFilmsContainer();
 }
 
@@ -127,3 +135,12 @@ function onQueueBtn() {
    return;
 }
 
+
+if (localStorage.getItem("watched") !== null) {
+   onWatchedBtnClick();
+   
+   if (localStorage.getItem("queue") !== null) {
+      onQueueBtnClick();
+      onQueueBtn();
+   }
+}
