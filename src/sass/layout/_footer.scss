@@ -11,6 +11,11 @@ footer {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
+
+  &:hover .heart__svg {
+    animation: beat .35s infinite alternate;
+    transform-origin: center;
+  }
 }
 
 .heart__svg {
@@ -49,5 +54,12 @@ footer button {
 
   .footer__text-first {
     margin-bottom: 0;
+  }
+}
+
+/* Heart beat animation */
+@keyframes beat {
+  to {
+    transform: scale(1.4);
   }
 }
