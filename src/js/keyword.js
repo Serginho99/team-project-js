@@ -9,7 +9,6 @@ const main = document.querySelector('#main');
 const inputEl = document.querySelector('.form-input');
 const loadMore = document.querySelector('.load-more');
 const pagination = document.querySelector('.pagination');
-console.log(pagination);
 
 const genres = [
   { id: 28, name: 'Action' },
