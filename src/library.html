@@ -36,9 +36,10 @@
                 <img src="./images/logo-for-animation.svg" alt="logo" />
               </div>
             </div>
-            <span class="logo-text">Filmoteka</span></a>
+            <span class="logo-text">Filmoteka</span></a
+          >
           <ul class="nav-list list">
-            <li class="nav-list-item ">
+            <li class="nav-list-item">
               <a href="./index.html" class="nav-list-link link">Home</a>
             </li>
             <li class="nav-list-item current-page">
@@ -48,19 +49,23 @@
         </nav>
         <ul class="btn-list list">
           <li class="btn-list__item">
-            <button type="button" class="button watched-btn">
+            <button type="button" class="button watched-btn" data-watched-btn>
               WATCHED
             </button>
-          </li class="btn-list__item">
-          <li><button type="button" class="button queue-btn">QUEUE</button></li>
+          </li>
+          <li class="btn-list__item">
+            <button type="button" class="button queue-btn">QUEUE</button>
+          </li>
         </ul>
       </div>
     </header>
-    <main>
+    <main id="main-library" class="container movies-gallery">
       <div class="container">
         <div class="library-wrapper">
-          <p class="library-text">Your library is empty, please add some films</p>
-        <a href="./index.html" class="library-link link">Choose film</a>
+          <p class="library-text">
+            Your library is empty, please add some films
+          </p>
+          <a href="./index.html" class="library-link link">Choose film</a>
         </div>
       </div>
     </main>
