@@ -36,9 +36,7 @@ form.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
-  main.innerHTML = '';
   searchQueryValue = e.currentTarget.elements.searchQuery.value.trim();
-  // searchFormApi(searchQueryValue);
   renderContainer(searchQueryValue);
 }
 
@@ -46,6 +44,9 @@ async function searchFormApi(text) {
   const response = await axios.get(
     `${baseUrl}/search/movie?api_key=${apiKey}&query=${text}`
   );
+  if (response.message === 422) {
+    throw new Error();
+  }
   return response.data;
 }
 
@@ -96,6 +97,20 @@ function generateContentList(array) {
 }
 
 async function renderContainer(value) {
-  const { results } = await searchFormApi(value);
-  main.insertAdjacentHTML('beforeend', generateContentList(results));
+  try {
+    const { results, total_pages, total_results } = await searchFormApi(value);
+    if (total_pages === 0 && total_results === 0) {
+      Notify.failure(
+        'Search result not successful. Enter the correct movie name and'
+      );
+    }
+    if (total_pages >= 1) {
+      main.innerHTML = '';
+      main.insertAdjacentHTML('beforeend', generateContentList(results));
+    }
+  } catch (error) {
+    Notify.failure(
+      'Search result not successful. Enter the correct movie name and'
+    );
+  }
 }
