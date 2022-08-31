@@ -21,6 +21,18 @@
   }
 }
 
+.load-button {
+  color: #fff;
+  background-color: #f8ac1f;
+  outline: 1px solid transparent;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 30px;
+  transition: background-color 0.25s linear;
+  display: block;
+  box-shadow: 1px 1px 8px 3px rgb(255 127 27 / 88%);
+}
+
 // .button-active {
 //   outline: none;
 //   background-color: var(--accent-color);
