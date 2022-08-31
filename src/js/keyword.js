@@ -7,6 +7,9 @@ const imgUrl = 'https://image.tmdb.org/t/p/w500';
 const form = document.querySelector('.form');
 const main = document.querySelector('#main');
 const inputEl = document.querySelector('.form-input');
+const loadMore = document.querySelector('.load-more');
+const pagination = document.querySelector('.pagination');
+console.log(pagination);
 
 const genres = [
   { id: 28, name: 'Action' },
@@ -36,16 +39,28 @@ form.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
-  main.innerHTML = '';
   searchQueryValue = e.currentTarget.elements.searchQuery.value.trim();
-  // searchFormApi(searchQueryValue);
-  renderContainer(searchQueryValue);
+  page = 1;
+  renderContainer(searchQueryValue, page);
+  loadMore.classList.remove('is-hidden');
+  pagination.classList.add('is-hidden');
 }
 
-async function searchFormApi(text) {
+loadMore.addEventListener('click', onloadMore);
+
+function onloadMore() {
+  page += 1;
+  main.scrollIntoView({ behavior: 'smooth' });
+  renderContainer(searchQueryValue, page);
+}
+
+async function searchFormApi(text, page) {
   const response = await axios.get(
-    `${baseUrl}/search/movie?api_key=${apiKey}&query=${text}`
+    `${baseUrl}/search/movie?api_key=${apiKey}&query=${text}&page=${page}`
   );
+  if (response.message === 422) {
+    throw new Error();
+  }
   return response.data;
 }
 
@@ -95,7 +110,24 @@ function generateContentList(array) {
   return array.reduce(createList, '');
 }
 
-async function renderContainer(value) {
-  const { results } = await searchFormApi(value);
-  main.insertAdjacentHTML('beforeend', generateContentList(results));
+async function renderContainer(value, page) {
+  try {
+    const { results, total_pages, total_results } = await searchFormApi(
+      value,
+      page
+    );
+    if (total_pages === 0 && total_results === 0) {
+      Notify.failure(
+        'Search result not successful. Enter the correct movie name and'
+      );
+    }
+    if (total_pages >= 1) {
+      main.innerHTML = '';
+      main.insertAdjacentHTML('beforeend', generateContentList(results));
+    }
+  } catch (error) {
+    Notify.failure(
+      'Search result not successful. Enter the correct movie name and'
+    );
+  }
 }

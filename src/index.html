@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filmoteka</title>
+    <meta name="robots" content="all" />
+    <meta
+      name="description"
+      content="Search movie library with variaties of films, different genres, average vote and comfortable interface"
+    />
+
+    <title>
+      Filmoteka - film, movie, search movie library, cinema, movie theatre,
+      genres, high average vote
+    </title>
     <link
       type="image/x-icon"
       href="./images/logo-black-favicon.svg"
@@ -43,8 +52,8 @@
                 <img src="./images/logo-for-animation.svg" alt="logo" />
               </div>
             </div>
-            <span class="logo-text">Filmoteka</span></a
-          >
+            <span class="logo-text">Filmoteka</span>
+          </a>
           <ul class="nav-list list">
             <li class="nav-list-item current-page">
               <a class="link nav-list-link" href="./index.html">Home</a>
@@ -73,6 +82,9 @@
       </div>
     </header>
     <main id="main" class="container movies-gallery"></main>
+    <button type="button" class="load-more load-button is-hidden">
+      load more
+    </button>
 
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/example.html"></include> -->
@@ -85,15 +97,15 @@
     <footer>
       <div class="footer__container container">
         <div class="footer__link">
-          <p class="footer__text">
-            © 2021 | All Rights Reserved | Developed with
-          </p>
+          <span class="footer__text-first">
+            © 2021 | All Rights Reserved |&nbsp</span
+          ><span class="footer__text-second">Developed with</span>
           <svg class="heart__svg">
             <use href="./images/svg/heart.svg#icon-heart"></use>
           </svg>
-          <p class="footer__second_text">by</p>
+          <span>by&nbsp</span>
           <button data-modal-students-open type="button" class="team-btn">
-            <a href="">GoIT Students</a>
+            GoIT Students
           </button>
         </div>
       </div>
