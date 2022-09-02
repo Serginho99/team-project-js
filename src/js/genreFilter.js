@@ -6,7 +6,7 @@ const imgUrl = 'https://image.tmdb.org/t/p/w500';
 const select = document.querySelector('.js-select');
 const mainEl = document.querySelector('#main');
 const pag = document.querySelector('.pagination');
-// const buttonLoadMore = document.querySelector('.load-more');
+const buttonLoadMore = document.querySelector('.load-more');
 const selectBtn = document.querySelector('.select-btn');
 
 // const divFilter = document.querySelector('.filter');
@@ -49,6 +49,7 @@ function onSelectChange(event) {
   value = event.target.value;
   page = 1;
   renderContainer(value, page);
+  buttonLoadMore.classList.add('is-hidden');
 }
 
 selectBtn.addEventListener('click', onSelectMore);
