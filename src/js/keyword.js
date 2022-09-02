@@ -6,9 +6,9 @@ const baseUrl = 'https://api.themoviedb.org/3';
 const imgUrl = 'https://image.tmdb.org/t/p/w500';
 const form = document.querySelector('.form');
 const main = document.querySelector('#main');
-const inputEl = document.querySelector('.form-input');
 const loadMore = document.querySelector('.load-more');
 const pagination = document.querySelector('.pagination');
+const btnSelected = document.querySelector('.select-btn');
 
 const genres = [
   { id: 28, name: 'Action' },
@@ -43,6 +43,7 @@ function onSearch(e) {
   renderContainer(searchQueryValue, page);
   loadMore.classList.remove('is-hidden');
   pagination.classList.add('is-hidden');
+  btnSelected.classList.add('is-hidden');
 }
 
 loadMore.addEventListener('click', onloadMore);
