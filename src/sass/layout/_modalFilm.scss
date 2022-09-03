@@ -149,19 +149,22 @@ dd i {
   background-color: transparent;
   outline: 1px solid #fff;
 
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.3;
-
   &.active,
   &:hover,
   &:focus {
     color: var(--primary-bg-color);
     outline: none;
     background-color: var(--accent-color);
+  }
 
-    // &:after {
-    // display: none;
+  body.light & {
+    color: #000;
+    outline-color: #000;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
   }
 }
 
@@ -172,6 +175,7 @@ dd i {
   padding-right: 7px;
   margin-right: 14px;
 }
+
 .modal__btn-queue {
   width: 112px;
   height: 44px;
