@@ -113,9 +113,12 @@ async function renderContainer(page) {
   try {
     mainRef.innerHTML = '';
     mainRef.insertAdjacentHTML('beforeend', generateContentList(results));
-
     if (page === 1) {
       Notify.success(`Hooray! We found ${total_results} films.`);
+    }
+    if (page >= totalPages) {
+      loadMoreRatingBtn.classList.add('is-hidden');
+      Notify.info("We're sorry, but you've reached the end of search results.");
     }
   } catch (error) {
     console.log(error);

@@ -119,11 +119,15 @@ async function renderContainer(id, page) {
   const { results, total_results } = await fetchMovieById(id, page);
   totalPage(total_results);
   try {
+    mainEl.innerHTML = '';
+    mainEl.insertAdjacentHTML('beforeend', generateContentList(results));
     if (page === 1) {
       Notify.success(`Hooray! We found ${total_results} films.`);
     }
-    mainEl.innerHTML = '';
-    mainEl.insertAdjacentHTML('beforeend', generateContentList(results));
+    if (page >= totalPages) {
+      selectBtn.classList.add('is-hidden');
+      Notify.info("We're sorry, but you've reached the end of search results.");
+    }
   } catch (error) {
     console.log(error);
   }
