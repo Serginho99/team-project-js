@@ -9,6 +9,7 @@ const main = document.querySelector('#main');
 const loadMore = document.querySelector('.load-more');
 const pagination = document.querySelector('.pagination');
 const btnSelected = document.querySelector('.select-btn');
+const loadMoreRatingBtn = document.querySelector('.load-more-rating');
 
 const genres = [
   { id: 28, name: 'Action' },
@@ -34,16 +35,20 @@ const genres = [
 
 let searchQueryValue;
 let page;
+let totalPages;
 form.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
+
   searchQueryValue = e.currentTarget.elements.searchQuery.value.trim();
   page = 1;
   renderContainer(searchQueryValue, page);
+  form.reset();
   loadMore.classList.remove('is-hidden');
   pagination.classList.add('is-hidden');
   btnSelected.classList.add('is-hidden');
+  loadMoreRatingBtn.classList.add('is-hidden');
 }
 
 loadMore.addEventListener('click', onloadMore);
@@ -116,6 +121,7 @@ async function renderContainer(value, page) {
       value,
       page
     );
+    totalResults(total_results);
     if (total_pages === 0 && total_results === 0) {
       Notify.failure(
         'Search result not successful. Enter the correct movie name and'
@@ -125,9 +131,16 @@ async function renderContainer(value, page) {
       main.innerHTML = '';
       main.insertAdjacentHTML('beforeend', generateContentList(results));
     }
+    if (page === 1) {
+      Notify.success(`Hooray! We found ${total_results} films.`);
+    }
   } catch (error) {
     Notify.failure(
       'Search result not successful. Enter the correct movie name and'
     );
   }
+}
+
+function totalResults(totalResults) {
+  totalPages = Math.ceil(totalResults / 20);
 }
