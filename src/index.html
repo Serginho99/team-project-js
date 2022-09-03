@@ -12,6 +12,7 @@
     genres, high average vote
   </title>
   <link type="image/x-icon" href="./images/logo-black-favicon.svg" rel="shortcut icon" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
@@ -32,28 +33,38 @@
   </div>
   <header class="overlay-home">
     <div class="container header-container">
-      <nav class="navigation">
-        <a class="logo link" href="./index.html">
-          <div class="animation-running-tape">
-            <div class="animation-wrapper">
-              <img src="./images/logo-for-animation.svg" alt="logo" />
+      <div class="header-wrapper">
+        <nav class="navigation">
+          <a class="logo link" href="./index.html">
+            <div class="animation-running-tape">
+              <div class="animation-wrapper">
+                <img src="./images/logo-for-animation.svg" alt="logo" />
+              </div>
             </div>
-          </div>
-          <span class="logo-text">Filmoteka</span>
-        </a>
-        <ul class="nav-list list">
-          <li class="nav-list-item current-page">
-            <a class="link nav-list-link" href="./index.html">Home</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="link nav-list-link" href="./library.html">My library</a>
-          </li>
-        </ul>
-      </nav>
+            <span class="logo-text">Filmoteka</span>
+          </a>
+          <ul class="nav-list list">
+            <li class="nav-list-item current-page">
+              <a class="link nav-list-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-list-item">
+              <a class="link nav-list-link" href="./library.html">My library</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="theme-switcher">
+          <input class="theme-switcher__checkbox" type="checkbox" id="checkbox">
+          <label class="theme-switcher__label" for="checkbox">
+            <span class="material-icons">sunny</span>
+            <span class="material-icons">dark_mode</span>
+            <div class="theme-switcher__ball"></div>
+          </label>
+        </div>
+      </div>
       <form class="form">
         <input class="form-input" name="searchQuery" type="text" placeholder="Movie search" />
         <button class="form-button" type="submit">
-          <img src="./images/search-icon.svg" alt="search icon" width="12" height="12" />
+          <img src="./images/search-icon.svg" alt="search icon" width="16" height="16" />
         </button>
       </form>
     </div>
@@ -98,7 +109,11 @@
 
   <div class="modal__backdrop is-hidden">
     <div class="modal__container">
-      <button type="button" class="btn" data-modal-close></button>
+      <button type="button" class="btn" data-modal-close>
+        <svg class="modal-close-icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.41415 8.29312L15.7071 2.00015L14.2929 0.585938L7.99994 6.87891L1.70712 0.586089L0.292908 2.0003L6.58573 8.29312L0.292908 14.5859L1.70712 16.0002L7.99994 9.70733L14.2929 16.0003L15.7071 14.5861L9.41415 8.29312Z"/>
+        </svg>
+      </button>
       <div class="modal__render"></div>
     </div>
   </div>
@@ -232,6 +247,7 @@
   <script type="module" src="./js/serviceApi.js"></script>
   <script type="module" src="./js/keyword.js"></script>
   <script type="module" src="./js/modalBtnClose.js"></script>
+  <script type="module" src="./js/theme-switcher.js"></script>
 
   <!-- <script type="module" src="./js/descriptionCard.js"></script>
     <script type="module" src="./js/modalBtnClose.js"></script> -->

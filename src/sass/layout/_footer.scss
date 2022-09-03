@@ -11,15 +11,19 @@
 }
 
 footer {
-  background-color: #f7f7f7;
+  background-color: rgb(74, 74, 74);
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 40px;
+
+  body.light & {
+    background-color: #f7f7f7;
+  }
 }
 
 .footer__link {
   text-align: center;
-  color: #545454;
+  color: #fff;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
@@ -29,6 +33,10 @@ footer {
     animation: beat 0.35s infinite alternate;
     transform-origin: center;
   }
+}
+
+body.light .footer__link {
+  color: #545454;
 }
 
 .heart__svg {
@@ -46,8 +54,12 @@ footer {
 
 footer button {
   background-color: transparent;
-  color: #545454;
+  color: #fff;
   text-decoration: underline;
+}
+
+body.light footer button {
+  color: #545454;
 }
 
 // media screen 768px

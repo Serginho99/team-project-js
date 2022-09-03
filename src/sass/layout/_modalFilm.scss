@@ -33,13 +33,17 @@ body.modal-open {
 .modal__container {
   max-width: 280px;
   padding: 48px 20px 38px 20px;
-  background-color: #ffffff;
+  background-color: #4a4a4a;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: auto;
   // height: 90vh;
+}
+
+body.light .modal__container {
+  background-color: #fff;
 }
 
 .modal__wrapper {
@@ -57,13 +61,15 @@ body.modal-open {
 }
 
 .modal__content {
-  color: #000000;
+  color: #fff;
   padding-bottom: 20px;
+
+  body.light & {
+    color:#000000
+  }
 }
 
 .movie__title {
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 23px;
@@ -138,10 +144,10 @@ dd i {
   border-radius: 5px;
   padding: 6px;
   max-width: 110px;
-  color: var(--primary-text-color);
+  color: #fff;
   text-transform: uppercase;
   background-color: transparent;
-  outline: 1px solid var(--primary-text-color);
+  outline: 1px solid #fff;
 
   // font-weight: 500;
   // font-size: 12px;
@@ -288,23 +294,24 @@ dd i {
     }
   }
 }
+
 .btn {
   width: 30px;
   height: 30px;
-  background-image: url(/src/images/svg/closeii.svg);
-  background-color: #ffffff;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   display: flex;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
+  align-items: center;
+  justify-content: center;
   border: none;
   background-color: transparent;
-  cursor: pointer;
-  &__cross {
-    fill: #000000;
+}
+
+.modal-close-icon {
+  fill: #fff;
+
+  body.light & {
+    fill: #000;
   }
 }
