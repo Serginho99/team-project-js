@@ -1,14 +1,19 @@
 import axios from 'axios';
-import { Notify } from 'notiflix';
 
 const apiKey = 'd7be37f171d8123214539749ff0838e8';
 const baseUrl = 'https://api.themoviedb.org/3';
 const imgUrl = 'https://image.tmdb.org/t/p/w500';
-const form = document.querySelector('.form');
-const main = document.querySelector('#main');
-const loadMore = document.querySelector('.load-more');
-const pagination = document.querySelector('.pagination');
-const btnSelected = document.querySelector('.select-btn');
+const select = document.querySelector('.js-select');
+const mainEl = document.querySelector('#main');
+const pag = document.querySelector('.pagination');
+const buttonLoadMore = document.querySelector('.load-more');
+const selectBtn = document.querySelector('.select-btn');
+
+// const divFilter = document.querySelector('.filter');
+// const formEl = document.querySelector('.form-filter');
+// console.log(formEl);
+
+// console.log(select);
 
 const genres = [
   { id: 28, name: 'Action' },
@@ -32,39 +37,36 @@ const genres = [
   { id: 37, name: 'Western' },
 ];
 
-let searchQueryValue;
 let page;
-form.addEventListener('submit', onSearch);
+let value;
 
-function onSearch(e) {
-  e.preventDefault();
-  searchQueryValue = e.currentTarget.elements.searchQuery.value.trim();
+select.addEventListener('change', onSelectChange);
+
+function onSelectChange(event) {
+  event.preventDefault();
+  selectBtn.classList.remove('is-hidden');
+  pag.classList.add('is-hidden');
+  value = event.target.value;
   page = 1;
-  renderContainer(searchQueryValue, page);
-  loadMore.classList.remove('is-hidden');
-  pagination.classList.add('is-hidden');
-  btnSelected.classList.add('is-hidden');
+  renderContainer(value, page);
+  buttonLoadMore.classList.add('is-hidden');
 }
 
-loadMore.addEventListener('click', onloadMore);
-
-function onloadMore() {
+selectBtn.addEventListener('click', onSelectMore);
+function onSelectMore() {
   page += 1;
-  main.scrollIntoView({ behavior: 'smooth' });
-  renderContainer(searchQueryValue, page);
+  mainEl.scrollIntoView({ behavior: 'smooth' });
+  renderContainer(value, page);
 }
 
-async function searchFormApi(text, page) {
-  const response = await axios.get(
-    `${baseUrl}/search/movie?api_key=${apiKey}&query=${text}&page=${page}`
-  );
-  if (response.message === 422) {
-    throw new Error();
-  }
+async function fetchMovieById(id, page) {
+  const response = await axios.get(`
+  ${baseUrl}/discover/movie?api_key=${apiKey}&with_genres=${id}&page=${page}`);
+  console.log(response.data);
   return response.data;
 }
 
-function createList(acc, cardFilm) {
+function renderList(acc, cardFilm) {
   let genreArrayOfObj = genres.filter(function (g) {
     return cardFilm.genre_ids.indexOf(g.id) !== -1;
   });
@@ -107,27 +109,11 @@ function createList(acc, cardFilm) {
 }
 
 function generateContentList(array) {
-  return array.reduce(createList, '');
+  return array.reduce(renderList, '');
 }
 
-async function renderContainer(value, page) {
-  try {
-    const { results, total_pages, total_results } = await searchFormApi(
-      value,
-      page
-    );
-    if (total_pages === 0 && total_results === 0) {
-      Notify.failure(
-        'Search result not successful. Enter the correct movie name and'
-      );
-    }
-    if (total_pages >= 1) {
-      main.innerHTML = '';
-      main.insertAdjacentHTML('beforeend', generateContentList(results));
-    }
-  } catch (error) {
-    Notify.failure(
-      'Search result not successful. Enter the correct movie name and'
-    );
-  }
+async function renderContainer(id, page) {
+  const { results } = await fetchMovieById(id, page);
+  mainEl.innerHTML = '';
+  mainEl.insertAdjacentHTML('beforeend', generateContentList(results));
 }
