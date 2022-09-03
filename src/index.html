@@ -8,30 +8,18 @@
       name="description"
       content="Search movie library with variaties of films, different genres, average vote and comfortable interface"
     />
-
     <title>
       Filmoteka - film, movie, search movie library, cinema, movie theatre,
       genres, high average vote
     </title>
-    <link
-      type="image/x-icon"
-      href="./images/logo-black-favicon.svg"
-      rel="shortcut icon"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    <link type="image/x-icon" href="./images/logo-black-favicon.svg" rel="shortcut icon" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
       integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
-
   <body>
     <!-- <include src="./partials/loader.html"></include>
     <include src="./partials/header.html"></include>
@@ -40,11 +28,13 @@
     <include src="./partials/footer.html"></include>
     <include src="./partials/modal.html"></include>
     <include src="./partials/students-modal.html"></include> -->
-    <div class="mask">
-      <div class="loader"></div>
-    </div>
-    <header class="overlay-home">
-      <div class="container header-container">
+
+  <div class="mask">
+    <div class="loader"></div>
+  </div>
+  <header class="overlay-home">
+    <div class="container header-container">
+      <div class="header-wrapper">
         <nav class="navigation">
           <a class="logo link" href="./index.html">
             <div class="animation-running-tape">
@@ -63,60 +53,53 @@
             </li>
           </ul>
         </nav>
-        <form class="form">
-          <input
-            class="form-input"
-            name="searchQuery"
-            type="text"
-            placeholder="Movie search"
-          />
-          <button class="form-button" type="submit">
-            <img
-              src="./images/search-icon.svg"
-              alt="search icon"
-              width="12"
-              height="12"
-            />
-          </button>
-        </form>
-
-        <select name="" class="js-select select">
-          <option value="" class="options">Change your genre...</option>
-          <option value="28" class="options">Action</option>
-          <option value="12" class="options">Adventure</option>
-          <option value="16" class="options">Animation</option>
-          <option value="35" class="options">Comedy</option>
-          <option value="80" class="options">Crime</option>
-          <option value="99" class="options">Documentary</option>
-          <option value="18" class="options">Drama</option>
-          <option value="10751" class="options">Family</option>
-          <option value="14" class="options">Fantasy</option>
-          <option value="36" class="options">History</option>
-          <option value="27" class="options">Horror</option>
-          <option value="10402" class="options">Music</option>
-          <option value="9648" class="options">Mystery</option>
-          <option value="10749" class="options">Romance</option>
-          <option value="878" class="options">Science Fiction</option>
-          <option value="10770" class="options">TV Movie</option>
-          <option value="53" class="options">Thriller</option>
-          <option value="10752" class="options">War</option>
-          <option value="37" class="options">Western</option>
-        </select>
-
-        <!-- </div> -->
+        <div class="theme-switcher">
+          <input class="theme-switcher__checkbox" type="checkbox" id="checkbox">
+          <label class="theme-switcher__label" for="checkbox">
+            <span class="material-icons">sunny</span>
+            <span class="material-icons">dark_mode</span>
+            <div class="theme-switcher__ball"></div>
+          </label>
+        </div>
       </div>
-    </header>
+      <form class="form">
+        <input class="form-input" name="searchQuery" type="text" placeholder="Movie search" />
+        <button class="form-button" type="submit">
+          <img src="./images/search-icon.svg" alt="search icon" width="16" height="16" />
+        </button>
+      </form>
+      <select name="" class="js-select select">
+        <option value="" class="options">Change your genre...</option>
+        <option value="28" class="options">Action</option>
+        <option value="12" class="options">Adventure</option>
+        <option value="16" class="options">Animation</option>
+        <option value="35" class="options">Comedy</option>
+        <option value="80" class="options">Crime</option>
+        <option value="99" class="options">Documentary</option>
+        <option value="18" class="options">Drama</option>
+        <option value="10751" class="options">Family</option>
+        <option value="14" class="options">Fantasy</option>
+        <option value="36" class="options">History</option>
+        <option value="27" class="options">Horror</option>
+        <option value="10402" class="options">Music</option>
+        <option value="9648" class="options">Mystery</option>
+        <option value="10749" class="options">Romance</option>
+        <option value="878" class="options">Science Fiction</option>
+        <option value="10770" class="options">TV Movie</option>
+        <option value="53" class="options">Thriller</option>
+        <option value="10752" class="options">War</option>
+        <option value="37" class="options">Western</option>
+      </select>
+    </div>
+  </header>
+  <main id="main" class="container movies-gallery"></main>
+  <button type="button" class="button load-more load-button is-hidden">
+    load more
+  </button>
+  <button type="button" class="button select-btn load-button is-hidden">
+    load more
+  </button>
 
-    <main id="main" class="container movies-gallery"></main>
-    <button type="button" class="button load-more load-button is-hidden">
-      load more
-    </button>
-    <button type="button" class="button select-btn load-button is-hidden">
-      load more
-    </button>
-
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <!-- <include src="./partials/example.html"></include> -->
     <div class="pagination">
       <div class="page arrow-left" id="prev"></div>
       <div class="current" id="current">1</div>
@@ -149,11 +132,14 @@
       </div>
     </div> -->
 
-    <div class="modal__backdrop is-hidden">
-      <div class="modal__container">
-        <button type="button" class="btn" data-modal-close></button>
-        <div class="modal__render"></div>
-      </div>
+  <div class="modal__backdrop is-hidden">
+    <div class="modal__container">
+      <button type="button" class="btn" data-modal-close>
+        <svg class="modal-close-icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.41415 8.29312L15.7071 2.00015L14.2929 0.585938L7.99994 6.87891L1.70712 0.586089L0.292908 2.0003L6.58573 8.29312L0.292908 14.5859L1.70712 16.0002L7.99994 9.70733L14.2929 16.0003L15.7071 14.5861L9.41415 8.29312Z"/>
+        </svg>
+      </button>
+      <div class="modal__render"></div>
     </div>
 
     <!-- STUDENTS MODAL -->
@@ -303,6 +289,8 @@
         </ul>
       </div>
     </div>
+  </div>
+  
     <script type="module" src="./js/descriptionCard.js"></script>
     <!-- <script type="module" src="./index.js"></script> -->
     <script type="module" src="./js/loader.js"></script>
@@ -311,6 +299,7 @@
     <script type="module" src="./js/keyword.js"></script>
     <script type="module" src="./js/modalBtnClose.js"></script>
     <script type="module" src="./js/genreFilter.js"></script>
+    <script type="module" src="./js/theme-switcher.js"></script>
 
     <!-- <script type="module" src="./js/descriptionCard.js"></script>
     <script type="module" src="./js/modalBtnClose.js"></script> -->

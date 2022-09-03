@@ -20,6 +20,12 @@ body {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+  background-color: #22242b;
+  transition: background-color 250ms linear;
+
+  &.light {
+    background-color: #fff;
+  }
 }
 
 img {

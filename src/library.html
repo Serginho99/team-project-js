@@ -10,6 +10,7 @@
       href="./images/logo-black-favicon.svg"
       rel="shortcut icon"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
@@ -29,24 +30,34 @@
     </div>
     <header class="overlay-library">
       <div class="container header-library">
-        <nav class="navigation navigation__library">
-          <a class="logo link" href="./index.html">
-            <div class="animation-running-tape">
-              <div class="animation-wrapper">
-                <img src="./images/logo-for-animation.svg" alt="logo" />
+        <div class="header-wrapper library">
+          <nav class="navigation navigation__library">
+            <a class="logo link" href="./index.html">
+              <div class="animation-running-tape">
+                <div class="animation-wrapper">
+                  <img src="./images/logo-for-animation.svg" alt="logo" />
+                </div>
               </div>
-            </div>
-            <span class="logo-text">Filmoteka</span></a
-          >
-          <ul class="nav-list list">
-            <li class="nav-list-item">
-              <a href="./index.html" class="nav-list-link link">Home</a>
-            </li>
-            <li class="nav-list-item current-page">
-              <a href="./library.html" class="nav-list-link link">My library</a>
-            </li>
-          </ul>
-        </nav>
+              <span class="logo-text">Filmoteka</span></a
+            >
+            <ul class="nav-list list">
+              <li class="nav-list-item">
+                <a href="./index.html" class="nav-list-link link">Home</a>
+              </li>
+              <li class="nav-list-item current-page">
+                <a href="./library.html" class="nav-list-link link">My library</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="theme-switcher">
+            <input class="theme-switcher__checkbox" type="checkbox" id="checkbox">
+            <label class="theme-switcher__label" for="checkbox">
+              <span class="material-icons">sunny</span>
+              <span class="material-icons">dark_mode</span>
+              <div class="theme-switcher__ball"></div>
+            </label>
+          </div>
+        </div>
         <ul class="btn-list list">
           <li class="btn-list__item">
             <button
@@ -251,6 +262,7 @@
     <script type="module" src="./js/modalStudents.js"></script>
     <script type="module" src="./js/removeDescriptionCard.js"></script>
     <script type="module" src="./js/modalBtnClose.js"></script>
+    <script type="module" src="./js/theme-switcher.js"></script>
 
     <!-- <script type="module" src="./js/modalBtnClose.js"></script> -->
   </body>
