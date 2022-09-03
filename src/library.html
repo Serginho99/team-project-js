@@ -10,7 +10,10 @@
       href="./images/logo-black-favicon.svg"
       rel="shortcut icon"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
@@ -45,12 +48,18 @@
                 <a href="./index.html" class="nav-list-link link">Home</a>
               </li>
               <li class="nav-list-item current-page">
-                <a href="./library.html" class="nav-list-link link">My library</a>
+                <a href="./library.html" class="nav-list-link link"
+                  >My library</a
+                >
               </li>
             </ul>
           </nav>
           <div class="theme-switcher">
-            <input class="theme-switcher__checkbox" type="checkbox" id="checkbox">
+            <input
+              class="theme-switcher__checkbox"
+              type="checkbox"
+              id="checkbox"
+            />
             <label class="theme-switcher__label" for="checkbox">
               <span class="material-icons">sunny</span>
               <span class="material-icons">dark_mode</span>
@@ -103,7 +112,21 @@
 
     <div class="modal__backdrop is-hidden">
       <div class="modal__container">
-        <button type="button" class="btn" data-modal-close></button>
+        <button type="button" class="btn" data-modal-close>
+          <svg
+            class="modal-close-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.41415 8.29312L15.7071 2.00015L14.2929 0.585938L7.99994 6.87891L1.70712 0.586089L0.292908 2.0003L6.58573 8.29312L0.292908 14.5859L1.70712 16.0002L7.99994 9.70733L14.2929 16.0003L15.7071 14.5861L9.41415 8.29312Z"
+            />
+          </svg>
+        </button>
         <div class="modal__render"></div>
       </div>
     </div>
