@@ -123,7 +123,7 @@ async function renderContainer(value, page) {
     );
     totalResults(total_results);
     if (total_pages === 0 && total_results === 0) {
-      Notify.failure(
+      return Notify.failure(
         'Search result not successful. Enter the correct movie name and'
       );
     }
@@ -132,12 +132,14 @@ async function renderContainer(value, page) {
       main.insertAdjacentHTML('beforeend', generateContentList(results));
     }
     if (page === 1) {
-      Notify.success(`Hooray! We found ${total_results} films.`);
+      return Notify.success(`Hooray! We found ${total_results} films.`);
+    }
+    if (page >= totalPages) {
+      loadMore.classList.add('is-hidden');
+      Notify.info("We're sorry, but you've reached the end of search results.");
     }
   } catch (error) {
-    Notify.failure(
-      'Search result not successful. Enter the correct movie name and'
-    );
+    console.log(error);
   }
 }
 
