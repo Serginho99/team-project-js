@@ -1,0 +1,2 @@
+let t=document.querySelector(".up-button");window.addEventListener("scroll",(function(){let o=window.pageYOffset;document.documentElement.scrollTopMax,o>500&&!Array.from(t.classList).includes("up-button-show")&&t.classList.add("up-button-show"),o<100&&t.classList.remove("up-button-show")})),t.addEventListener("click",(function(){window.pageYOffset>0&&window.scrollTo({top:0,behavior:"auto"})}));
+//# sourceMappingURL=index.5498c422.js.map
