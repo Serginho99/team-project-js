@@ -75,14 +75,17 @@ const movieDataQueue = localStorage.getItem(LOCAL_QUEUE)
 
 function addBtnWatch(value) {
   const btnWatched = document.querySelector('.modal__btn-watched');
-  btnWatched.addEventListener('click', addToWatch);
+    btnWatched.addEventListener('click', addToWatch);
+    
   console.log(btnWatched);
 
   function addToWatch() {
     movieDataWatched[value] = value;
     localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
     delete movieDataQueue[value];
-    localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
+      localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
+       modalBackdrop.classList.add('is-hidden');
+  document.body.classList.toggle('modal-open');
   }
 }
 
@@ -94,7 +97,9 @@ function addBtnQueue(value) {
     movieDataQueue[value] = value;
     localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
     delete movieDataWatched[value];
-    localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
+      localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
+modalBackdrop.classList.add('is-hidden');
+  document.body.classList.toggle('modal-open');
   }
 }
 
