@@ -60,6 +60,7 @@ async function renderModal(value) {
 
   addBtnQueue(value);
   addBtnWatch(value);
+  addBtnDeleted(value);
 }
 
 const LOCAL_WATCHED = 'watched';
@@ -85,7 +86,8 @@ function addBtnWatch(value) {
     delete movieDataQueue[value];
       localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
        modalBackdrop.classList.add('is-hidden');
-  document.body.classList.toggle('modal-open');
+      document.body.classList.toggle('modal-open');
+      location.reload();
   }
 }
 
@@ -99,9 +101,27 @@ function addBtnQueue(value) {
     delete movieDataWatched[value];
       localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
 modalBackdrop.classList.add('is-hidden');
-  document.body.classList.toggle('modal-open');
+      document.body.classList.toggle('modal-open');
+      location.reload();
   }
 }
+
+function addBtnDeleted(value) {
+  const addBtnDeleted = document.querySelector('.modal__btn-deleted');
+  addBtnDeleted.addEventListener('click', addToDeleted);
+
+  function addToDeleted() {
+      delete movieDataQueue[value];
+    localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
+    delete movieDataWatched[value];
+      localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
+modalBackdrop.classList.add('is-hidden');
+      document.body.classList.toggle('modal-open');
+      location.reload();
+  }
+}
+
+
 
 function renderCardFilm(cardFilm) {
   return `
@@ -172,6 +192,11 @@ function renderCardFilm(cardFilm) {
                 cardFilm.id
               }" class="modal__btn modal__btn-queue">
                 add to queue
+              </button>
+              <button type="button" data-id="${
+                cardFilm.id
+              }" class="modal__btn modal__btn-deleted">
+                DELETED
               </button>
             </div>
           </div>
