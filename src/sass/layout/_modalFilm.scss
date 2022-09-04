@@ -176,17 +176,25 @@ dd i {
 
 .modal__btn-watched {
   width: 112px;
-  height: 44px;
+  min-height: 44px;
   padding-left: 7px;
   padding-right: 7px;
-  margin-right: 14px;
+  margin-right: 10px;
 }
 
 .modal__btn-queue {
   width: 112px;
-  height: 44px;
+  min-height: 44px;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.modal__btn-deleted{
+    width: 112px;
+    min-height: 44px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 10px;
 }
 
 // -----------------------------------------
