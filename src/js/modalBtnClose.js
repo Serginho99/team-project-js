@@ -1,5 +1,7 @@
 const refs = {
   closeModalBtns: document.querySelector('[data-modal-close]'),
+  
+
   backdrops: document.querySelector('.modal__backdrop'),
 };
 

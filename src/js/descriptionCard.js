@@ -82,8 +82,11 @@ function addBtnWatch(value) {
     localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
     delete movieDataQueue[value];
     localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
-  }
+  modalBackdrop.classList.add('is-hidden');
+  document.body.classList.toggle('modal-open');
 }
+  }
+    
 
 function addBtnQueue(value) {
   const btnQueue = document.querySelector('.modal__btn-queue');
@@ -94,6 +97,10 @@ function addBtnQueue(value) {
     localStorage.setItem(LOCAL_QUEUE, JSON.stringify(movieDataQueue));
     delete movieDataWatched[value];
     localStorage.setItem(LOCAL_WATCHED, JSON.stringify(movieDataWatched));
+   
+    modalBackdrop.classList.add('is-hidden');
+  document.body.classList.toggle('modal-open');
+    
   }
 }
 
